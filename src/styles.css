@@ -2,3 +2,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #589827;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.main-color {
+  background-color: var(--primary);
+}
+
+.border__bottom {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 150px;
+  height: 8px;
+  background-color: #9ADE9C;
+}
