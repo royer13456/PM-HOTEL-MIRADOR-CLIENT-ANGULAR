@@ -7,6 +7,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminGuard } from './pages/admin/admin.guard';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
+import { RoomListComponent } from './components/room-list/room-list.component';
+import { AdminMainComponent } from './components/admin-main/admin-main.component';
 
 const routes: Routes = [
   {
@@ -22,7 +24,14 @@ const routes: Routes = [
     path: 'contacto', component: ContactUsComponent
   },
   {
-    path: 'admin', component: AdminComponent, canActivate: [AdminGuard]
+    path: 'admin', component: AdminComponent, canActivate: [AdminGuard], children: [
+      {
+        path: '', component: AdminMainComponent, canActivate: [AdminGuard]
+      },
+      {
+        path: 'list', component: RoomListComponent, canActivate: [AdminGuard]
+      }
+    ]
   },
   {
     path: 'login', component: LoginAdminComponent

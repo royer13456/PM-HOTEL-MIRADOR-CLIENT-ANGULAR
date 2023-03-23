@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { FormsModule } from "@angular/forms";
-
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -25,8 +25,8 @@ import { FormsModule } from "@angular/forms";
   imports: [
     CommonModule,
     ComponentsModule,
-    FormsModule
-
+    FormsModule,
+    AppRoutingModule,
   ],
   exports: [
     HomeComponent,

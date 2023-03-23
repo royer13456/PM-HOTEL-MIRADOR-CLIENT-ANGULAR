@@ -1,0 +1,9 @@
+<div class="grid grid-cols-3">
+  <div *ngFor="let room of rooms" class="p-5 border">
+    <p>{{room.title}}</p>
+    <p>{{room.price}}</p>
+    <p>{{room.description}}</p>
+    <p>{{room.visible?'se muestra':'no se muestra'}}</p>
+    <p>{{room.created_at | date}}</p>
+  </div>
+</div>
