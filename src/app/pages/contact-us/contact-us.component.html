@@ -1,11 +1,15 @@
-<div class="px-5 py-10 m-auto mt-10 border md:w-5/12 md:mt-16">
-  <h2 class="font-bold text-center underline uppercase md:text-2xl">formulario de contacto</h2>
-  <form class="flex flex-col gap-4 p-5">
-    <input type="text" name="" placeholder="Apellidos y nombres" class="px-3 py-2 border rounded-lg outline-none" />
-    <input type="text" name="" placeholder="Correo electrónico" class="px-3 py-2 border rounded-lg outline-none" />
-    <input type="text" name="" placeholder="Número de celular" class="px-3 py-2 border rounded-lg outline-none" />
-    <textarea name="" cols="30" rows="5" placeholder="Mensaje"
-      class="px-3 py-2 border rounded-lg outline-none"></textarea>
-    <button class="w-full py-2 text-lg font-semibold text-white rounded-lg main-color">Enviar</button>
-  </form>
+<div class="flex flex-col min-h-screen">
+  <app-navbar></app-navbar>
+  <div class="flex-1 px-5 py-10 m-auto mt-10 border md:w-5/12 md:mt-16">
+    <h2 class="font-bold text-center underline uppercase md:text-2xl">formulario de contacto</h2>
+    <form class="flex flex-col gap-4 p-5">
+      <input type="text" name="" placeholder="Apellidos y nombres" class="px-3 py-2 border rounded-lg outline-none" />
+      <input type="text" name="" placeholder="Correo electrónico" class="px-3 py-2 border rounded-lg outline-none" />
+      <input type="text" name="" placeholder="Número de celular" class="px-3 py-2 border rounded-lg outline-none" />
+      <textarea name="" cols="30" rows="5" placeholder="Mensaje"
+        class="px-3 py-2 border rounded-lg outline-none"></textarea>
+      <button class="w-full py-2 text-lg font-semibold text-white rounded-lg main-color">Enviar</button>
+    </form>
+  </div>
+  <app-footer></app-footer>
 </div>

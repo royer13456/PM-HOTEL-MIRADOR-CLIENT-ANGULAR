@@ -6,6 +6,9 @@ import { RoomComponent } from './room/room.component';
 import { DescriptionPipe } from '../description.pipe';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { FormsModule } from "@angular/forms";
 
 
 
@@ -15,17 +18,23 @@ import { AboutComponent } from './about/about.component';
     RoomComponent,
     DescriptionPipe,
     ContactUsComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent,
+    LoginAdminComponent
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
+
   ],
   exports: [
     HomeComponent,
     RoomComponent,
     ContactUsComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent,
+    LoginAdminComponent
   ]
 })
 export class PagesModule { }
