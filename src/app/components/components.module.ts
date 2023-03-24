@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { PipesModule } from '../pipes/pipes.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RoomListComponent } from './room-list/room-list.component';
@@ -13,6 +14,7 @@ import { RoomFormComponent } from './room-form/room-form.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 // ANGULAR MATERIAL
 
 
@@ -33,6 +35,8 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatInputModule,
     MatListModule,
+    PipesModule,
+    MatButtonModule
   ],
   exports: [
     NavbarComponent,

@@ -44,7 +44,7 @@ export class RoomFormComponent implements OnInit {
     this.roomService.createRoomRequest(this.room)
       .subscribe(
         (response) => {
-          this.router.navigate(['/'])
+          this.router.navigate(['/admin/list'])
         }
       )
   }
@@ -56,7 +56,7 @@ export class RoomFormComponent implements OnInit {
     this.roomService.updateRoomRequest(id, this.room)
       .subscribe(
         (response) => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/admin/list']);
         }
       )
   }

@@ -17,40 +17,38 @@
         <textarea matInput [(ngModel)]="room.description" name="description" rows="5"></textarea>
       </mat-form-field>
 
-      <button class="btn btn-success btn-block" (click)="edit ? updateRoom() : createRoom()">
+      <mat-form-field class=" example-full-width">
+        <mat-label>Precio</mat-label>
+        <input type="number" matInput [(ngModel)]="room.price" name="price">
+      </mat-form-field>
+
+      <!-- <button class="btn btn-success btn-block" (click)="edit ? updateRoom() : createRoom()">
+        {{edit?"Edit":"Register"}}
+      </button> -->
+      <button mat-raised-button color="accent" (click)="edit ? updateRoom() : createRoom()">
         {{edit?"Edit":"Register"}}
       </button>
     </form>
   </div>
 
   <div class="flex items-center justify-center ">
-
-    <!-- <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-
-      <img class="w-full rounded-t-lg" [src]="room.image_url == ''? '/assets/no-image.png':room.image_url " alt="" />
-
-      <div class="p-5">
-        <a>
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 capitalize">
-            {{room.title == ''? "Nombre habitación":room.title}}
-          </h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology
-          acquisitions
-          of 2021 so far, in reverse chronological order.</p>
-      </div>
-    </div> -->
     <mat-card class="max-w-sm example-card">
       <img mat-card-image [src]="room.image_url == ''? '/assets/no-image.png':room.image_url "
         alt="Photo of a Shiba Inu">
       <mat-card-content>
         <mat-card-title class="capitalize">{{room.title==''?'Habitacion [nombre]':room.title}}</mat-card-title>
-        <mat-list *ngFor="let d of room.description">
-          <mat-list-item>Pepper</mat-list-item>
+
+        <mat-list>
+          <mat-list-item *ngFor="let d of room.description |description">
+            <span class="capitalize">
+              {{d == ''?'Descripción':d}}
+            </span>
+          </mat-list-item>
         </mat-list>
+        <mat-card-subtitle>
+          {{room.price}}
+        </mat-card-subtitle>
       </mat-card-content>
     </mat-card>
-
-
   </div>
 </div>
