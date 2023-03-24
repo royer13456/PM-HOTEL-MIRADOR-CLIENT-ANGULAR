@@ -5,7 +5,7 @@ export interface Room {
   price: number;
   description: string;
   visible: boolean;
-  created_at: Date;
+  created_at?: Date;
 }
 
 export interface Admin {

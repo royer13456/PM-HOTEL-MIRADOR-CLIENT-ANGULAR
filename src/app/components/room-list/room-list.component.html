@@ -1,9 +1,10 @@
-<div class="grid grid-cols-3">
+<div class="grid w-10/12 grid-cols-4 gap-4 m-auto">
   <div *ngFor="let room of rooms" class="p-5 border">
+    <img [src]="room.image_url" alt="">
     <p>{{room.title}}</p>
     <p>{{room.price}}</p>
     <p>{{room.description}}</p>
-    <p>{{room.visible?'se muestra':'no se muestra'}}</p>
     <p>{{room.created_at | date}}</p>
+    <a [routerLink]="['/admin/edit/',room.id]" class="px-4 py-1 text-white main-color">Editar</a>
   </div>
 </div>

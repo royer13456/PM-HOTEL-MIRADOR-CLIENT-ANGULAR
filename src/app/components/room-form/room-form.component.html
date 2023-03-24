@@ -1,0 +1,38 @@
+<div class="grid w-full min-h-screen grid-cols-2 p-0">
+  <div class="flex items-center justify-center">
+    <form class="flex flex-col gap-3">
+      <div>
+        <input class="border border-gray-300 outline-none " type="text" name="image_url" [(ngModel)]="room.image_url"
+          placeholder="Image_url">
+      </div>
+      <div>
+        <input class="border border-gray-300 outline-none " type="text" name="title" [(ngModel)]="room.title"
+          placeholder="Title" autofocus>
+      </div>
+
+      <button class="btn btn-success btn-block" (click)="edit ? updateRoom() : createRoom()">
+        {{edit?"Edit":"Register"}}
+      </button>
+    </form>
+  </div>
+
+  <div class="flex items-center justify-center ">
+
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+
+      <img class="w-full rounded-t-lg" [src]="room.image_url == ''? '/assets/no-image.png':room.image_url " alt="" />
+
+      <div class="p-5">
+        <a>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 capitalize">
+            {{room.title == ''? "Nombre habitación":room.title}}
+          </h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology
+          acquisitions
+          of 2021 so far, in reverse chronological order.</p>
+      </div>
+    </div>
+
+  </div>
+</div>

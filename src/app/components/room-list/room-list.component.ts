@@ -14,6 +14,10 @@ export class RoomListComponent implements OnInit {
   constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
+    this.loadRooms();
+  }
+
+  loadRooms() {
     this.roomService.getRoomsRequest().
       subscribe(response => {
         this.rooms = response;
