@@ -11,6 +11,11 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from '../app-routing.module';
 import { PipesModule } from '../pipes/pipes.module';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +31,9 @@ import { PipesModule } from '../pipes/pipes.module';
     ComponentsModule,
     FormsModule,
     AppRoutingModule,
-    PipesModule
+    PipesModule,
+    MatIconModule,
+    MatCheckboxModule,
   ],
   exports: [
     HomeComponent,

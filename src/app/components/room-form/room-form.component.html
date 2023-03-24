@@ -17,14 +17,16 @@
         <textarea matInput [(ngModel)]="room.description" name="description" rows="5"></textarea>
       </mat-form-field>
 
+      <mat-checkbox class="example-margin" name="visible" [(ngModel)]="room.visible">
+        {{room.visible == 1?'Ocultar?':'Mostrar?'}}
+      </mat-checkbox>
+
       <mat-form-field class=" example-full-width">
         <mat-label>Precio</mat-label>
         <input type="number" matInput [(ngModel)]="room.price" name="price">
       </mat-form-field>
 
-      <!-- <button class="btn btn-success btn-block" (click)="edit ? updateRoom() : createRoom()">
-        {{edit?"Edit":"Register"}}
-      </button> -->
+
       <button mat-raised-button color="accent" (click)="edit ? updateRoom() : createRoom()">
         {{edit?"Edit":"Register"}}
       </button>
@@ -45,8 +47,9 @@
             </span>
           </mat-list-item>
         </mat-list>
+
         <mat-card-subtitle>
-          {{room.price}}
+          S/{{room.price}}
         </mat-card-subtitle>
       </mat-card-content>
     </mat-card>

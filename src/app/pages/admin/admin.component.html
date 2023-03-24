@@ -23,15 +23,9 @@
         <a routerLink="/admin/list"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
 
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 512 512">
-            <title>Home</title>
-            <path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212"
-              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-            <path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" fill="none"
-              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-          </svg>
+          <img src="/assets/icons/home.svg" alt="">
 
-          <span class="ml-3">Habitaciones</span>
+          <span class="ml-3">Ver Habitaciones</span>
         </a>
       </li>
 
@@ -39,28 +33,18 @@
         <a routerLink="/admin/new"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
 
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 512 512">
-            <title>Home</title>
-            <path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212"
-              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-            <path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" fill="none"
-              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-          </svg>
+          <img src="/assets/icons/plus.svg" alt="">
 
-          <span class="ml-3">Agregar cuarto</span>
+          <span class="ml-3">Agregar habitación</span>
         </a>
       </li>
 
       <li class="cursor-pointer">
         <a (click)="logOut()"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-          <svg aria-hidden="true"
-            class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-              clip-rule="evenodd"></path>
-          </svg>
+
+          <img src="/assets/icons/logout.svg" alt="">
+
           <span class="flex-1 ml-3 whitespace-nowrap">Log out</span>
         </a>
       </li>

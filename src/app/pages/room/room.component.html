@@ -1,7 +1,9 @@
 <app-navbar></app-navbar>
 <div class="container grid justify-center gap-5 md:grid-cols-3">
 
-  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow" *ngFor="let room of roomList">
+  <div *ngFor="let room of roomList" [ngClass]="room.visible?'block':'hidden'"
+    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
+
     <a href="#">
       <img class="rounded-t-lg" [src]="room.image_url" [alt]="room.title" />
     </a>
@@ -25,7 +27,7 @@
         </svg>
       </button>
     </div>
-  </div>
 
+  </div>
 </div>
 <app-footer></app-footer>

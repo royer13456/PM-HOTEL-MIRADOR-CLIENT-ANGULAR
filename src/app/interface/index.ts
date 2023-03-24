@@ -4,7 +4,7 @@ export interface Room {
   title: string;
   price: number;
   description: string;
-  visible: boolean;
+  visible: boolean | number;
   created_at?: Date;
 }
 

@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 // ANGULAR MATERIAL
 
 
@@ -36,7 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatListModule,
     PipesModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ],
   exports: [
     NavbarComponent,

@@ -52,7 +52,12 @@ export class RoomFormComponent implements OnInit {
   updateRoom() {
     delete this.room.created_at;
     const id = this.room.id!;
-
+    if (this.room.visible) {
+      this.room.visible = 1
+    } else {
+      this.room.visible = 0
+    }
+    console.log(this.room.visible);
     this.roomService.updateRoomRequest(id, this.room)
       .subscribe(
         (response) => {
