@@ -1,5 +1,6 @@
-<div class="grid w-10/12 grid-cols-4 gap-4 m-auto">
-  <div *ngFor="let room of rooms" class="p-5 border">
+<div class="grid w-10/12 grid-cols-4 gap-4 m-auto mt-20">
+  <div *ngFor="let room of rooms" class="relative p-5 border">
+    <span class="absolute right-1 top-2 status" [ngClass]="room.visible?'bg-green-500':'bg-red-500'"></span>
     <img [src]="room.image_url" alt="">
     <p class="capitalize">{{room.title}}</p>
     <p>S/{{room.price}}</p>
@@ -9,6 +10,7 @@
       </li>
     </ul>
     <p>{{room.created_at | date}}</p>
-    <a [routerLink]="['/admin/edit/',room.id]" class="px-4 py-1 text-white bg-blue-500">Editar</a>
+    <a [routerLink]="['/admin/edit/',room.id]" class="block px-4 py-2 text-center text-white bg-blue-500">Editar</a>
   </div>
+
 </div>

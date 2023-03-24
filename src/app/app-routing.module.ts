@@ -10,6 +10,7 @@ import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
 import { RoomFormComponent } from './components/room-form/room-form.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 const routes: Routes = [
   {
@@ -30,10 +31,13 @@ const routes: Routes = [
         path: '', component: AdminMainComponent, canActivate: [AdminGuard]
       },
       {
+        path: 'list', component: RoomListComponent, canActivate: [AdminGuard]
+      },
+      {
         path: 'new', component: RoomFormComponent, canActivate: [AdminGuard]
       },
       {
-        path: 'list', component: RoomListComponent, canActivate: [AdminGuard]
+        path: 'messages', component: MessagesComponent, canActivate: [AdminGuard]
       },
       {
         path: 'edit/:id', component: RoomFormComponent, canActivate: [AdminGuard]

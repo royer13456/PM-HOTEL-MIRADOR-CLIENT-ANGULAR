@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MessagesComponent } from './messages/messages.component';
 // ANGULAR MATERIAL
 
 
@@ -28,6 +29,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     RoomListComponent,
     AdminMainComponent,
     RoomFormComponent,
+    MessagesComponent,
   ],
   imports: [
     CommonModule,

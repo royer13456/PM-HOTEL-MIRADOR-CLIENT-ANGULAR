@@ -57,7 +57,6 @@ export class RoomFormComponent implements OnInit {
     } else {
       this.room.visible = 0
     }
-    console.log(this.room.visible);
     this.roomService.updateRoomRequest(id, this.room)
       .subscribe(
         (response) => {
