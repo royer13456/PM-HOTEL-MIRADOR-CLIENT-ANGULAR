@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RoomListComponent } from './room-list/room-list.component';
 import { AdminMainComponent } from './admin-main/admin-main.component';
-import { RouterModule } from '@angular/router';
 import { RoomFormComponent } from './room-form/room-form.component';
-import { FormsModule } from '@angular/forms';
+
+// ANGULAR MATERIAL
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+// ANGULAR MATERIAL
+
 
 
 
@@ -16,12 +24,15 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     RoomListComponent,
     AdminMainComponent,
-    RoomFormComponent
+    RoomFormComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatListModule,
   ],
   exports: [
     NavbarComponent,
