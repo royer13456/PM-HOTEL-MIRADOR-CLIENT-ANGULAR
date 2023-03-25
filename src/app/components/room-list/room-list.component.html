@@ -1,4 +1,4 @@
-<div class="grid w-10/12 grid-cols-4 gap-4 m-auto mt-20">
+<!-- <div class="grid w-10/12 grid-cols-4 gap-4 m-auto mt-20">
   <div *ngFor="let room of rooms" class="relative p-5 border">
     <span class="absolute right-1 top-2 status" [ngClass]="room.visible?'bg-green-500':'bg-red-500'"></span>
     <img [src]="room.image_url" alt="">
@@ -13,4 +13,28 @@
     <a [routerLink]="['/admin/edit/',room.id]" class="block px-4 py-2 text-center text-white bg-blue-500">Editar</a>
   </div>
 
+</div> -->
+
+<div>
+  <div class="container grid w-11/12 grid-cols-4 gap-5 m-auto">
+    <mat-card *ngFor="let item of rooms" class="relative">
+      <span class="absolute right-1 top-2 status" [ngClass]="item.visible?'bg-green-500':'bg-red-500'"></span>
+      <img mat-card-image [src]="item.image_url" alt="Imagen habitación">
+      <mat-card-header>
+        <mat-card-title class="capitalize">{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>S/{{ item.price }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content *ngFor="let desc of item.description | description">
+        <p>{{ desc }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a [routerLink]="['/admin/edit/',item.id]" class="block px-4 py-2 text-center text-white bg-blue-500">Editar</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <mat-paginator [length]="paginationInfo.totalItems" [pageSize]="paginationInfo.itemsPerPage"
+    [pageSizeOptions]="pageSizeOptions" [pageIndex]="paginationInfo.currentPage - 1"
+    (page)="loadRoomsWithPagination($event.pageIndex + 1, $event.pageSize)">
+  </mat-paginator>
 </div>

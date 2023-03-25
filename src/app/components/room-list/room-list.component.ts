@@ -11,10 +11,20 @@ export class RoomListComponent implements OnInit {
 
   rooms: Room[] = []
 
+  pageSizeOptions: number[] = [8, 20, 50];
+
+  paginationInfo = {
+    currentPage: 1,
+    itemsPerPage: this.pageSizeOptions[0],
+    totalItems: 0,
+    totalPages: 0,
+  };
+
   constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
-    this.loadRooms();
+    // this.loadRooms();
+    this.loadRoomsWithPagination()
   }
 
   loadRooms() {
@@ -22,6 +32,21 @@ export class RoomListComponent implements OnInit {
       subscribe(response => {
         this.rooms = response;
       })
+  }
+
+  loadRoomsWithPagination(page: number = 1, itemsPerPage: number = this.paginationInfo.itemsPerPage) {
+    this.roomService.getRoomsRequest()
+      .subscribe((response) => {
+        this.paginationInfo.totalItems = response.length;
+        this.paginationInfo.totalPages = Math.ceil(response.length / itemsPerPage);
+        this.paginationInfo.itemsPerPage = itemsPerPage;
+        this.paginationInfo.currentPage = page;
+
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        this.rooms = response.slice(startIndex, endIndex)
+      });
   }
 
 }
