@@ -24,8 +24,12 @@ export class RoomFormComponent implements OnInit {
 
   constructor(private roomService: RoomService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
+  id: number = 0;
+
   ngOnInit(): void {
     const { id } = this.activatedRoute.snapshot.params;
+    this.id = id;
+
     if (id) {
       this.roomService.getRoomRequest(id)
         .subscribe(

@@ -7,10 +7,6 @@
   --primary: #589827;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
 
 .main-color {
   background-color: var(--primary);
@@ -24,5 +20,13 @@
   height: 8px;
   background-color: #9ADE9C;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

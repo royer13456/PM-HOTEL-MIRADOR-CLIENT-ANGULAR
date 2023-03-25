@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container grid justify-center gap-5 md:grid-cols-3">
+<div class="container grid justify-center gap-5 py-10 m-auto md:grid-cols-3">
 
   <div *ngFor="let room of roomList" [ngClass]="room.visible?'block':'hidden'"
     class="max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
@@ -12,7 +12,7 @@
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 capitalize">{{room.title}}</h5>
       </a>
       <ul class="px-5 list-disc">
-        <li class="mb-1 font-normal text-gray-700" *ngFor="let d of room.description | description">
+        <li class="mb-1 font-normal text-gray-700 capitalize" *ngFor="let d of room.description | description">
           {{d}}
         </li>
       </ul>
