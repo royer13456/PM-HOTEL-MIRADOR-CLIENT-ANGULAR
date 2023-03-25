@@ -40,7 +40,7 @@ import { MessagesComponent } from './messages/messages.component';
     MatListModule,
     PipesModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   exports: [
     NavbarComponent,

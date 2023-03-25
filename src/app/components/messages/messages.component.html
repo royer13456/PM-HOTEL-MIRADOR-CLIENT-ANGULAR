@@ -1,1 +1,17 @@
-<p>messages works!</p>
+<section class="mt-10">
+  <h1 class="text-center underline ">MENSAJES</h1>
+  <div class="container flex flex-col justify-between w-11/12 p-3 mx-auto border md:flex-row">
+    <span>Nombres</span>
+    <span>Correo</span>
+    <span>Celular</span>
+    <span>Mensaje</span>
+  </div>
+  <div *ngFor="let message of messages">
+    <div class="container flex flex-col justify-between w-11/12 p-3 mx-auto border md:flex-row">
+      <span>{{message.names}}</span>
+      <span>{{message.correo}}</span>
+      <span>{{message.celular}}</span>
+      <span>{{message.message}}</span>
+    </div>
+  </div>
+</section>
