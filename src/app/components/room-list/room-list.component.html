@@ -1,20 +1,3 @@
-<!-- <div class="grid w-10/12 grid-cols-4 gap-4 m-auto mt-20">
-  <div *ngFor="let room of rooms" class="relative p-5 border">
-    <span class="absolute right-1 top-2 status" [ngClass]="room.visible?'bg-green-500':'bg-red-500'"></span>
-    <img [src]="room.image_url" alt="">
-    <p class="capitalize">{{room.title}}</p>
-    <p>S/{{room.price}}</p>
-    <ul>
-      <li *ngFor="let d of room.description | description">
-        {{d}}
-      </li>
-    </ul>
-    <p>{{room.created_at | date}}</p>
-    <a [routerLink]="['/admin/edit/',room.id]" class="block px-4 py-2 text-center text-white bg-blue-500">Editar</a>
-  </div>
-
-</div> -->
-
 <div>
   <div class="container grid w-11/12 grid-cols-4 gap-5 m-auto">
     <mat-card *ngFor="let item of rooms" class="relative">

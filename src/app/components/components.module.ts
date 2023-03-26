@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MessagesComponent } from './messages/messages.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormCardComponent } from './form-card/form-card.component';
 
 // ANGULAR MATERIAL
 
@@ -32,6 +33,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AdminMainComponent,
     RoomFormComponent,
     MessagesComponent,
+    FormCardComponent,
   ],
   imports: [
     CommonModule,

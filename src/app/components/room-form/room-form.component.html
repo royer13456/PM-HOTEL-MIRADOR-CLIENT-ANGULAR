@@ -1,7 +1,7 @@
 <div class="grid w-full min-h-screen grid-cols-2 p-0">
 
   <div class="flex items-center justify-center">
-    <form class="flex flex-col gap-3 p-10 border border-gray-500 rounded-lg">
+    <form class="flex flex-col w-1/2 gap-3 p-10 border border-gray-500 rounded-lg">
       <h1>{{id?'Editar':'Crear'}} habitacion</h1>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Imagen URL</mat-label>
@@ -35,23 +35,6 @@
   </div>
 
   <div class="flex items-center justify-center ">
-    <mat-card class="max-w-sm example-card">
-      <img mat-card-image [src]="room.image_url == ''? '/assets/no-image.png':room.image_url " [alt]="room.title">
-      <mat-card-content>
-        <mat-card-title class="capitalize">{{room.title==''?'Habitacion [nombre]':room.title}}</mat-card-title>
-
-        <mat-list>
-          <mat-list-item *ngFor="let d of room.description |description">
-            <span class="capitalize">
-              {{d == ''?'Descripción':d}}
-            </span>
-          </mat-list-item>
-        </mat-list>
-
-        <mat-card-subtitle>
-          S/{{room.price}}
-        </mat-card-subtitle>
-      </mat-card-content>
-    </mat-card>
+    <app-form-card [room]="room"></app-form-card>
   </div>
 </div>
