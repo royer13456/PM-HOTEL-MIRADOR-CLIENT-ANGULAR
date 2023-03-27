@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
-
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
@@ -20,17 +19,22 @@ export class RoomListComponent implements OnInit {
     totalPages: 0,
   };
 
+  enabledRooms: Room[] = [];
+
+  disabledRooms: Room[] = [];
+
   constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
-    // this.loadRooms();
-    this.loadRoomsWithPagination()
+    this.loadRooms();
+    // this.loadRoomsWithPagination()    
   }
 
   loadRooms() {
     this.roomService.getRoomsRequest().
       subscribe(response => {
         this.rooms = response;
+        this.filterRooms()
       })
   }
 
@@ -48,5 +52,11 @@ export class RoomListComponent implements OnInit {
         this.rooms = response.slice(startIndex, endIndex)
       });
   }
+
+  filterRooms() {
+    this.enabledRooms = this.rooms.filter(room => room.visible);
+    this.disabledRooms = this.rooms.filter(room => !room.visible);
+  }
+
 
 }

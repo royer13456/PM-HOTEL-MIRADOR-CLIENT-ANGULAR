@@ -7,13 +7,15 @@ import { ContactMessage } from '../interface';
 })
 export class ContactService {
 
+  API_URL = "http://localhost:3000/api/contact";
+
   constructor(private http: HttpClient) { }
 
   getMessagesRequest() {
-    return this.http.get<ContactMessage[]>('http://localhost:3000/api/contact');
+    return this.http.get<ContactMessage[]>(this.API_URL);
   }
 
   createMessage(message: ContactMessage) {
-    return this.http.post(`http://localhost:3000/api/contact`, message);
+    return this.http.post(this.API_URL, message);
   }
 }

@@ -19,7 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MessagesComponent } from './messages/messages.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormCardComponent } from './form-card/form-card.component';
-
+import { MatTabsModule } from '@angular/material/tabs';
 // ANGULAR MATERIAL
 
 
@@ -46,6 +46,7 @@ import { FormCardComponent } from './form-card/form-card.component';
     MatButtonModule,
     MatCheckboxModule,
     MatPaginatorModule,
+    MatTabsModule,
   ],
   exports: [
     NavbarComponent,

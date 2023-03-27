@@ -15,7 +15,7 @@ export class AdminService {
   isLoggedIn(user: string, password: string): Observable<boolean> {
 
     return new Observable<boolean>(observer => {
-      if (user === 'admin' && password === '123' || this.LSService.get('admin')) {
+      if (user === 'admin' && password === '123456' || this.LSService.get('admin')) {
         this.isLogged = true;
         observer.next(true);
         observer.complete();
