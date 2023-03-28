@@ -1,12 +1,15 @@
-<div class="flex flex-col m-auto text-center text-white ">
+<div class="flex flex-col lg:flex-row flex-wrap xl:flex-row justify-around m-auto text-center xl:px-5 text-[rgb(239,239,239)] bg-[rgb(45,45,45)]">
 
-  <div class="flex flex-row justify-between px-20 bg-[#2b2b2b] py-5">
-    <section class="flex flex-row gap-20 ">
-      <div class="flex flex-col items-center justify-center gap-3">
+  
+  <section class=" border-b-2 border-[rgb(239,239,239)]  lg:border-b-[rgb(45,45,45)] lg:border-r-2 lg:border-[rgb(239,239,239)]">
+    
+    <div class="py-10  flex flex-col sm:flex-row sm:justify-evenly gap-10 xl:gap-40">
+      <div class="flex flex-col items-center justify-center gap-3 ">
         <img class="w-[60px]" src="/assets/logo.jpg" alt="">
         <h3>H. TORRE TORRE</h3>
       </div>
-      <div class="gap-5 text-left">
+      <div class="gap-5 xl:text-left lg:pr-10 lg:pl-10 xl:pr-20">
+        <!-- xl:pr-20 xl:pl-20 -->
         <ul>
           <li class="mb-3">
             <a href="">Nosotros</a>
@@ -18,45 +21,49 @@
             <a href="">Galeria</a>
           </li>
           <li>
-            <a href="">Ubicacion</a>
+            <a href="
+            ">Ubicacion</a>
           </li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <section class=" flex flex-row pl-28 gap-40 border-solid border-l-2 border-[#f1f1f1] items-center">
-      
-      <div class="flex flex-col gap-3 text-sm">
+  </section>
+
+  <section class="">
+    <div class="py-10 flex flex-col flex-wrap sm:flex-row sm:justify-evenly  items-center sm:items-start gap-10 lg:gap-20 xl:gap-28">
+      <div class="flex flex-col gap-3 text-sm lg:pl-5">
         <section class="flex flex-row gap-5">
-          <img class="w-[20px] " src="/assets/logo-telefono-movil.png" alt="telefono">
+          <img class="w-[20px] h-[20px]" src="/assets/logo-telefono-movil.png" alt="telefono">
           <p>+51 998 602 811</p>
         </section>
         <section class="flex flex-row gap-5">
-          <img class="w-[20px] " src="/assets/logo-email.png" alt="email">
-          <p>mirador.torretorre.hotel@gmail.com</p>
+          <img class="w-[20px] h-[20px]" src="/assets/logo-email.png" alt="email">
+          <p class="text-left">miradortorretorrehotel<wbr>@gmail.com</p>
         </section>
         <section class="flex flex-row gap-5">
-          <img class="w-[20px] " src="/assets/logo-ubicacion.png" alt="ubicacion">
-          <p>Jr.Torre torre 202-Huancayo</p>
+          <img class="w-[20px] h-[20px]" src="/assets/logo-ubicacion.png" alt="ubicacion">
+          <p class="text-left">Jr.Torre torre 202<wbr>-Huancayo</p>
         </section>
       </div>
 
+      <div class="flex flex-col items-center gap-3">
+        <p>Redes sociales</p>
+        <div class="grid grid-cols-2 gap-3">
+          <a class="cursor-pointer w-[20px] lg:w-[30px]" href="#"><img src="/assets/socials/facebook.svg" alt=""></a>
+          <a class="cursor-pointer w-[20px] lg:w-[30px]" href="#"><img src="/assets/socials/twitter.svg" alt=""></a>
+          <a class="cursor-pointer w-[20px] lg:w-[30px]" href="#"><img src="/assets/socials/instagram.svg" alt=""></a>
+          <a class="cursor-pointer w-[20px] lg:w-[30px]" href="#"><img src="/assets/socials/youtube.svg" alt=""></a>
+        </div>
+      </div>
+
       <div class="flex flex-col gap-5">
-        <section class="flex flex-col items-center gap-3">
-          <h3>Libro de reclamaciones</h3>
+        <section class="flex flex-col items-center">
+          <p class="">Libro de reclamaciones</p>
           <img class="w-[50px]" src="/assets/libro-reclamaciones.png" alt="libro-reclamaciones">
         </section>
-        <section class="flex flex-col gap-3">
-          <p>Redes sociales</p>
-          <div class="flex flex-row justify-between gap-3">
-            <a class="cursor-pointer" href="#"><img class="w-[20px]" src="/assets/socials/facebook.svg" alt=""></a>
-            <a class="cursor-pointer" href="#"><img class="w-[20px]" src="/assets/socials/twitter.svg" alt=""></a>
-            <a class="cursor-pointer" href="#"><img class="w-[20px]" src="/assets/socials/instagram.svg" alt=""></a>
-            <a class="cursor-pointer" href="#"><img class="w-[20px]" src="/assets/socials/youtube.svg" alt=""></a>
-          </div>
-        </section>
-      </div>
-      
-    </section>
-  </div>
+      </div> 
+    </div>
+  </section>
+
 </div>
