@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   logOut() {
     this.adminService.logout()
     this.router.navigate(['/'])

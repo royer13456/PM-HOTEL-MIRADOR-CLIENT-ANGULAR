@@ -53,7 +53,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     FooterComponent,
     RoomListComponent,
     AdminMainComponent,
-    RoomFormComponent
+    RoomFormComponent,
   ]
 })
 export class ComponentsModule { }
