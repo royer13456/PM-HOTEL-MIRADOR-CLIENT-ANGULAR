@@ -28,6 +28,7 @@ export class RoomFormComponent implements OnInit {
 
   ngOnInit(): void {
     const { id } = this.activatedRoute.snapshot.params;
+
     this.id = id;
 
     if (id) {
@@ -48,7 +49,7 @@ export class RoomFormComponent implements OnInit {
     this.roomService.createRoomRequest(this.room)
       .subscribe(
         (response) => {
-          this.router.navigate(['/admin/list'])
+          this.router.navigate(['/admin/list']);          
         }
       )
   }

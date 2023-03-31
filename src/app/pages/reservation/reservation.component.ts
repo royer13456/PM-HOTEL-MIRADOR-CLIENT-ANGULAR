@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RoomService } from './../../services/room.service';
 import { ActivatedRoute } from '@angular/router';
 import { Room } from 'src/app/interface';
+import { Reservation } from 'src/app/interface';
 
 @Component({
   selector: 'app-reservation',
@@ -18,6 +19,19 @@ export class ReservationComponent implements OnInit {
     title: '',
     visible: true,
     created_at: new Date(),
+  }
+
+  reserveRoom: Reservation = {
+    id: 0,
+    code: "",
+    from: "",
+    to: "",
+    n_rooms: 0,
+    names: "",
+    email: "",
+    phone: "",
+    total: 0,
+
   }
 
   number: number = 0;
@@ -54,5 +68,8 @@ export class ReservationComponent implements OnInit {
     } else {
       this.number--
     }
+  }
+  reserve() {
+    console.log(this.room)
   }
 }
