@@ -13,6 +13,9 @@ import { PipesModule } from '../pipes/pipes.module';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReservationComponent } from './reservation/reservation.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 
@@ -24,7 +27,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ContactUsComponent,
     AboutComponent,
     AdminComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    ReservationComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +38,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     PipesModule,
     MatIconModule,
     MatCheckboxModule,
+    MatCardModule,
+    MatDatepickerModule,
   ],
   exports: [
     HomeComponent,

@@ -15,8 +15,8 @@ export class RoomService {
     return this.http.get<Room[]>(this.API_URL);
   }
 
-  getRoomRequest(id: string) {
-    return this.http.get<Room>(`${this.API_URL}/${id}`);
+  getRoomRequest(id: number) {
+    return this.http.get(`${this.API_URL}/${id}`);
   }
 
   createRoomRequest(room: Room) {

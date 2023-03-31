@@ -11,6 +11,7 @@ import { RoomListComponent } from './components/room-list/room-list.component';
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
 import { RoomFormComponent } from './components/room-form/room-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,9 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginAdminComponent
+  },
+  {
+    path: 'reservation/:id', component: ReservationComponent
   }
 ];
 
