@@ -1,67 +1,67 @@
 <main class="relative flex flex-col min-h-screen">
-    <!-- <div class="absolute top-0 h-[20rem] w-full -z-10 bg-[#000]"></div> -->
-    <app-navbar></app-navbar>
-    <section class="container flex-1 mx-auto">
-      <div class="grid gap-5 md:grid-cols-2">
-        <mat-card class="w-8/12 mx-auto md:w-6/12">
-          <img class="mx-auto" [src]="room.image_url" [alt]="room.title">
-          <p class="p-3 text-2xl text-center capitalize">{{room.title}}</p>
-        </mat-card>
-  
-        <section class="flex flex-col w-8/12 gap-10 p-4 mx-auto rounded-lg shadow-lg md:w-6/12">
-          <p class="text-xl font-bold text-center">SU RESERVA:</p>
-  
-          <div class="flex justify-between">
-            <label for="from">
-              <span class="font-bold">Desde:</span>
-              <input class="outline-none" type="date" [min]="minDate">
-            </label>
-            <label for="to">
-              <span class="font-bold">Hasta:</span>
-              <input class="outline-none" type="date">
-            </label>
-          </div>
-  
-          <label for="rooms">
-            <div class="flex items-center justify-start">
-              <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-l-lg"
-                (click)="decrement()">-</button>
-              <input type="number" class="w-16 text-center border border-gray-300 outline-none h-7" [value]="number"
-                readonly>
-              <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-r-lg"
-                (click)="increment()">+</button>
-            </div>
+  <!-- <div class="absolute top-0 h-[20rem] w-full -z-10 bg-[#000]"></div> -->
+  <app-navbar></app-navbar>
+  <section class="container flex-1 mx-auto">
+    <div class="grid gap-5 md:grid-cols-2">
+      <mat-card class="w-8/12 mx-auto md:w-6/12">
+        <img class="mx-auto" [src]="room.image_url" [alt]="room.title">
+        <p class="p-3 text-2xl text-center capitalize">{{room.title}}</p>
+      </mat-card>
+
+      <section class="flex flex-col w-8/12 gap-10 p-4 mx-auto rounded-lg shadow-lg md:w-6/12">
+        <p class="text-xl font-bold text-center">SU RESERVA:</p>
+
+        <div class="flex justify-between">
+          <label for="from">
+            <span class="font-bold">Desde:</span>
+            <input class="outline-none" type="date" [min]="minDate">
           </label>
-          <section>
-            <p class="text-lg font-bold">Datos del huesped</p>
-            <label for="">
-              <p class="font-semibold">Nombre y apellido</p>
-              <input class="border border-black outline-none" type="text">
-            </label>
-            <label for="">
-              <p class="font-semibold">Email</p>
-              <input class="border border-black outline-none" type="text">
-            </label>
-            <label for="">
-              <p class="font-semibold">Celular</p>
-              <input class="border border-black outline-none" type="text">
-            </label>
-          </section>
-  
-          <section>
-            <div class="flex justify-between">
-              <p class="text-lg font-semibold">Monto</p>
-              <div class="flex flex-col text-center">
-                <span>S/{{room.price}}</span>
-                <span>(6 horas)</span>
-              </div>
-            </div>
-          </section>
-  
-          <button class="px-3 py-2 mx-auto text-white rounded-lg main-color max-w-min">
-            RESERVAR
-          </button>
+          <label for="to">
+            <span class="font-bold">Hasta:</span>
+            <input class="outline-none" type="date">
+          </label>
+        </div>
+
+        <label for="rooms">
+          <div class="flex items-center justify-start">
+            <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-l-lg"
+              (click)="decrement()">-</button>
+            <input type="number" class="w-16 text-center border border-gray-300 outline-none h-7" [value]="number"
+              readonly>
+            <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-r-lg"
+              (click)="increment()">+</button>
+          </div>
+        </label>
+        <section>
+          <p class="text-lg font-bold">Datos del huesped</p>
+          <label for="">
+            <p class="font-semibold">Nombre y apellido</p>
+            <input class="border border-black outline-none" type="text">
+          </label>
+          <label for="">
+            <p class="font-semibold">Email</p>
+            <input class="border border-black outline-none" type="text">
+          </label>
+          <label for="">
+            <p class="font-semibold">Celular</p>
+            <input class="border border-black outline-none" type="text">
+          </label>
         </section>
-      </div>
-    </section>
-  </main>
+
+        <section>
+          <div class="flex justify-between">
+            <p class="text-lg font-semibold">Monto</p>
+            <div class="flex flex-col text-center">
+              <span>S/{{room.price}}</span>
+              <span>(6 horas)</span>
+            </div>
+          </div>
+        </section>
+
+        <button class="px-3 py-2 mx-auto text-white rounded-lg main-color max-w-min">
+          RESERVAR
+        </button>
+      </section>
+    </div>
+  </section>
+</main>

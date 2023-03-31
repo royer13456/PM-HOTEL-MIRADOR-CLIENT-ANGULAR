@@ -19,7 +19,7 @@ export class ReservationComponent implements OnInit {
     visible: true,
     created_at: new Date(),
   }
-  
+
   number: number = 0;
 
   minDate: string;
