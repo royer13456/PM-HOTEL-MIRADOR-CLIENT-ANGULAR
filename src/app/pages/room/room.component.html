@@ -5,7 +5,7 @@
     <div *ngFor="let room of roomList" [ngClass]="room.visible?'block':'hidden'"
       class="max-w-xs m-auto bg-white border border-gray-200 rounded-lg shadow">
 
-      <img class="rounded-t-lg" [src]="room.image_url" [alt]="room.title" />
+      <img class="rounded-t-lg" [src]="room.image_url" [alt]="room.title" loading="lazy" />
 
       <div class="p-5">
         <h1 class="mb-2 text-lg font-bold tracking-tight text-gray-900 capitalize">{{room.title}}</h1>

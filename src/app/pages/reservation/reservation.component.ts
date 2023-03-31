@@ -31,7 +31,6 @@ export class ReservationComponent implements OnInit {
     email: "",
     phone: "",
     total: 0,
-
   }
 
   number: number = 0;
