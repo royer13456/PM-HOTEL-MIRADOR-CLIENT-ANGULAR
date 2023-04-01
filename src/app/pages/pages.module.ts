@@ -7,7 +7,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from '../app-routing.module';
 import { PipesModule } from '../pipes/pipes.module';
 
@@ -40,6 +40,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCheckboxModule,
     MatCardModule,
     MatDatepickerModule,
+    ReactiveFormsModule ,
   ],
   exports: [
     HomeComponent,

@@ -27,14 +27,12 @@ export class ReservationComponent implements OnInit {
     code: "",
     from: "",
     to: "",
-    n_rooms: 0,
+    n_rooms: 1,
     names: "",
     email: "",
     phone: "",
     total: 0,
   }
-
-  number: number = 0;
 
   minDate: string;
 
@@ -56,20 +54,31 @@ export class ReservationComponent implements OnInit {
   }
 
   increment() {
-    if (this.number >= 20) {
-      this.number = 20
+    if (this.reserveRoom.n_rooms >= 20) {
+      this.reserveRoom.n_rooms = 20
     } else {
-      this.number++
+      this.reserveRoom.n_rooms++
     }
   }
   decrement() {
-    if (this.number <= 1) {
-      this.number = 0
+    if (this.reserveRoom.n_rooms <= 1) {
+      this.reserveRoom.n_rooms = 1
     } else {
-      this.number--
+      this.reserveRoom.n_rooms--
     }
   }
   reserve() {
-    console.log(this.room)
+    if (this.reserveRoom.from &&
+      this.reserveRoom.to &&
+      this.reserveRoom.names &&
+      this.reserveRoom.email &&
+      this.reserveRoom.phone) {
+      // Realizar acciones en caso de que todos los campos estén completos
+      console.table(this.reserveRoom);
+    } else {
+      // Mostrar mensaje de error o realizar acciones en caso de que falten campos
+      alert("Completar todos los campos");
+    }
   }
+
 }

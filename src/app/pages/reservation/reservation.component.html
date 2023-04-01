@@ -19,11 +19,12 @@
         <div class="flex justify-between">
           <label for="from">
             <span class="font-bold">Desde:</span>
-            <input class="outline-none" type="date" [min]="minDate" name="from">
+            <input class="outline-none" type="date" [min]="minDate" name="from" [(ngModel)]="reserveRoom.from" required>
           </label>
           <label for="to">
             <span class="font-bold">Hasta:</span>
-            <input class="outline-none" type="date" name="to">
+            <input class="outline-none" type="date" [min]="minDate" name="to" name="to" [(ngModel)]="reserveRoom.to"
+              required>
           </label>
         </div>
 
@@ -31,25 +32,28 @@
           <div class="flex items-center justify-start">
             <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-l-lg"
               (click)="decrement()">-</button>
-            <input type="number" class="w-16 text-center border border-gray-300 outline-none h-7" [value]="number"
-              readonly>
+            <input type="number" class="w-16 text-center border border-gray-300 outline-none h-7"
+              [value]="reserveRoom.n_rooms" readonly name="n_rooms" [(ngModel)]="reserveRoom.n_rooms">
             <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-r-lg"
               (click)="increment()">+</button>
           </div>
         </label>
         <section>
           <p class="text-lg font-bold">Datos del huesped</p>
-          <label for="">
+          <label for="names">
             <p class="font-semibold">Nombre y apellido</p>
-            <input class="border border-black outline-none" type="text">
+            <input class="w-full h-8 border border-gray-400 outline-none" type="text" name="names"
+              [(ngModel)]="reserveRoom.names" required="true">
           </label>
-          <label for="">
+          <label for="email">
             <p class="font-semibold">Email</p>
-            <input class="border border-black outline-none" type="text">
+            <input class="w-full h-8 border border-gray-400 outline-none" type="text" name="email"
+              [(ngModel)]="reserveRoom.email" required>
           </label>
           <label for="">
             <p class="font-semibold">Celular</p>
-            <input class="border border-black outline-none" type="text">
+            <input class="w-full h-8 border border-gray-400 outline-none" type="text" name="phone"
+              [(ngModel)]="reserveRoom.phone" required>
           </label>
         </section>
 

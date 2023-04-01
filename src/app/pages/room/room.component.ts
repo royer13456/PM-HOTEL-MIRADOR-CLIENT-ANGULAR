@@ -30,10 +30,6 @@ export class RoomComponent implements OnInit {
         this.estandarRooms = this.roomList.filter(room => room.category === "Estándar");
         this.dobleRooms = this.roomList.filter(room => room.category === "Doble ejecutivo");
         this.tripleRooms = this.roomList.filter(room => room.category === "Tripe ejecutivo");
-        console.table(this.estandarRooms);
-        console.table(this.dobleRooms);
-        console.table(this.tripleRooms);
-
       })
   }
 
