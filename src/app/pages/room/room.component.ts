@@ -11,8 +11,15 @@ import { Room } from './../../interface/index';
 export class RoomComponent implements OnInit {
 
   roomList: Room[] = [];
-  
+
   descriptions: string[] = []
+
+  // "Estándar", "Doble ejecutivo", "Tripe ejecutivo"
+  estandarRooms: Room[] = [];
+
+  dobleRooms: Room[] = [];
+
+  tripleRooms: Room[] = [];
 
   constructor(private roomService: RoomService) { }
 
@@ -20,6 +27,13 @@ export class RoomComponent implements OnInit {
     this.roomService.getRoomsRequest()
       .subscribe(res => {
         this.roomList = res;
+        this.estandarRooms = this.roomList.filter(room => room.category === "Estándar");
+        this.dobleRooms = this.roomList.filter(room => room.category === "Doble ejecutivo");
+        this.tripleRooms = this.roomList.filter(room => room.category === "Tripe ejecutivo");
+        console.table(this.estandarRooms);
+        console.table(this.dobleRooms);
+        console.table(this.tripleRooms);
+
       })
   }
 

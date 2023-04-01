@@ -58,5 +58,4 @@ export class RoomListComponent implements OnInit {
     this.disabledRooms = this.rooms.filter(room => !room.visible);
   }
 
-
 }
