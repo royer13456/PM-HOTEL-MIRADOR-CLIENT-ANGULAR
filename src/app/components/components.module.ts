@@ -21,6 +21,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormCardComponent } from './form-card/form-card.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
+import { ClientModule } from './client/client.module';
 
 // ANGULAR MATERIAL
 
@@ -50,6 +51,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatPaginatorModule,
     MatTabsModule,
     MatSelectModule,
+    ClientModule
   ],
   exports: [
     NavbarComponent,
@@ -57,6 +59,7 @@ import { MatSelectModule } from '@angular/material/select';
     RoomListComponent,
     AdminMainComponent,
     RoomFormComponent,
+    ClientModule
   ]
 })
 export class ComponentsModule { }
