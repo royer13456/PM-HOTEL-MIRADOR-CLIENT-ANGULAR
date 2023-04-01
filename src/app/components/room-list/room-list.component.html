@@ -4,10 +4,9 @@
       <div class="grid w-11/12 grid-cols-4 m-auto gap-x-5 gap-y-10">
         <ng-container *ngFor="let room of enabledRooms">
           <mat-card>
-            <img mat-card-image [src]="room.image_url" alt="Imagen habitación">
+            <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
             <div class="flex justify-between">
-              <mat-card-title class="capitalize">{{ room.title }}</mat-card-title>
-              <mat-card-subtitle>S/{{ room.price }}</mat-card-subtitle>
+              <mat-card-title class="capitalize truncate">{{ room.title }}</mat-card-title>
             </div>
             <mat-card-actions>
               <a [routerLink]="['/admin/edit/',room.id]"
@@ -22,7 +21,7 @@
       <div class="grid w-11/12 grid-cols-4 m-auto gap-x-5 gap-y-10">
         <ng-container *ngFor="let room of disabledRooms">
           <mat-card>
-            <img mat-card-image [src]="room.image_url" alt="Imagen habitación">
+            <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
             <div class="flex justify-between">
               <mat-card-title class="capitalize">{{ room.title }}</mat-card-title>
               <mat-card-subtitle>S/{{ room.price }}</mat-card-subtitle>
