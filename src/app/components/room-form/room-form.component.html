@@ -18,6 +18,15 @@
         <textarea matInput [(ngModel)]="room.description" name="description" rows="5"></textarea>
       </mat-form-field>
 
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccionar</mat-label>
+        <mat-select [(ngModel)]="room.category" name="category">
+          <mat-option [value]="category" *ngFor="let category of categories">
+            {{category}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <mat-checkbox class="example-margin" name="visible" [(ngModel)]="room.visible">
         {{room.visible == 1?'Ocultar?':'Mostrar?'}}
       </mat-checkbox>

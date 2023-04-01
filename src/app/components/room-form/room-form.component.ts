@@ -15,10 +15,13 @@ export class RoomFormComponent implements OnInit {
     image_url: "",
     title: "",
     description: "",
+    category: "",
     price: 0,
     visible: true,
     created_at: new Date(),
   }
+
+  categories: string[] = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
 
   edit: boolean = false;
 
@@ -49,7 +52,7 @@ export class RoomFormComponent implements OnInit {
     this.roomService.createRoomRequest(this.room)
       .subscribe(
         (response) => {
-          this.router.navigate(['/admin/list']);          
+          this.router.navigate(['/admin/list']);
         }
       )
   }

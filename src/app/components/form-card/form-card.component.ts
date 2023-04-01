@@ -13,6 +13,7 @@ export class FormCardComponent implements OnInit {
     image_url: '',
     title: '',
     description: '',
+    category: '',
     price: 0,
     visible: true,
     created_at: new Date(),

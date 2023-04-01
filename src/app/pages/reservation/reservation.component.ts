@@ -14,9 +14,10 @@ export class ReservationComponent implements OnInit {
   room: Room = {
     id: 0,
     image_url: '',
-    description: '',
     price: 0,
     title: '',
+    description: '',
+    category: '',
     visible: true,
     created_at: new Date(),
   }

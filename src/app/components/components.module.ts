@@ -20,6 +20,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormCardComponent } from './form-card/form-card.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+
 // ANGULAR MATERIAL
 
 
@@ -47,6 +49,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCheckboxModule,
     MatPaginatorModule,
     MatTabsModule,
+    MatSelectModule,
   ],
   exports: [
     NavbarComponent,
