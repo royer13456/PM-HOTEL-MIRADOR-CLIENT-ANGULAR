@@ -83,7 +83,14 @@ export class ReservationComponent implements OnInit {
       // Realizar acciones en caso de que todos los campos estén completos
       this.reserveService.getReservations()
         .subscribe((res) => {
-          console.log(res.length + 1);
+          delete this.reserveRoom.id;
+
+          this.reserveRoom.total = (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18;;
+          this.reserveRoom.code = `${this.room.id}-${this.reserveRoom.names}-${this.reserveRoom.total}`;
+          this.reserveService.createReserveRequest(this.reserveRoom)
+            .subscribe((res) => {
+              console.log(res)
+            })
           this.generatePDF(
             `Nº 0000${res.length + 1}`,
             this.reserveRoom.names,
@@ -94,10 +101,13 @@ export class ReservationComponent implements OnInit {
             (this.room.price * this.reserveRoom.n_rooms) * 0.18,
             (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18
           );
-          window.location.reload();
+          setTimeout(() => {
+            // window.location.reload();
+          }, 1500);
+
+          console.table(this.reserveRoom)
         })
     } else {
-      // Mostrar mensaje de error o realizar acciones en caso de que falten campos
       alert("Completar todos los campos");
     }
   }

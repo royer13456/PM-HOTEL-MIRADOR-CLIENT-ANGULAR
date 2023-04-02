@@ -8,7 +8,6 @@ import { Reservation } from 'src/app/interface';
 export class ReserveService {
 
   constructor(private http: HttpClient) {
-
   }
 
   getReservations() {
@@ -16,6 +15,6 @@ export class ReserveService {
   }
 
   createReserveRequest(reservation: Reservation) {
-    return this.http.post('http://localhost:3000/api/reserve', reservation);
+    return this.http.post<Reservation>('http://localhost:3000/api/reserve', reservation);
   }
 }

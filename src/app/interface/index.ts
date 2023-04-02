@@ -22,7 +22,7 @@ export interface ContactMessage {
 }
 
 export interface Reservation {
-  id: string | number;
+  id?: string | number;
   code: string;
   from: string;
   to: string;
