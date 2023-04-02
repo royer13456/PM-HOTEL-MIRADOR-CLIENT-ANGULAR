@@ -41,6 +41,8 @@ export class ReservationComponent implements OnInit {
 
   date: Date = new Date();
 
+  reservesLenght: number = 0;
+
   constructor(private roomService: RoomService, private activatedRoute: ActivatedRoute, private reserveService: ReserveService, private router: Router) {
     const currentDate = new Date();
     this.minDate = currentDate.toISOString().split('T')[0];
@@ -75,38 +77,40 @@ export class ReservationComponent implements OnInit {
   }
 
   reserve() {
+    delete this.reserveRoom.id;
     if (this.reserveRoom.from &&
       this.reserveRoom.to &&
       this.reserveRoom.names &&
       this.reserveRoom.email &&
       this.reserveRoom.phone) {
-      // Realizar acciones en caso de que todos los campos estén completos
+      /***********************************************/
       this.reserveService.getReservations()
+        .subscribe((res: any) => {
+          this.reservesLenght = res.lenght;
+        });
+      /***********************************************/
+      this.generatePDF(
+        `Nº 0000${this.reservesLenght + 1}`,
+        this.reserveRoom.names,
+        this.room.id,
+        this.room.description,
+        this.reserveRoom.n_rooms,
+        this.room.price,
+        (this.room.price * this.reserveRoom.n_rooms) * 0.18,
+        (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18
+      );
+      /***********************************************/
+      this.reserveRoom.total = (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18;;
+      this.reserveRoom.code = `${this.room.id}-${this.reserveRoom.names}-${this.reserveRoom.total}`;
+      this.reserveService.createReserveRequest(this.reserveRoom)
         .subscribe((res) => {
-          delete this.reserveRoom.id;
-
-          this.reserveRoom.total = (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18;;
-          this.reserveRoom.code = `${this.room.id}-${this.reserveRoom.names}-${this.reserveRoom.total}`;
-          this.reserveService.createReserveRequest(this.reserveRoom)
-            .subscribe((res) => {
-              console.log(res)
-            })
-          this.generatePDF(
-            `Nº 0000${res.length + 1}`,
-            this.reserveRoom.names,
-            this.room.id,
-            this.room.description,
-            this.reserveRoom.n_rooms,
-            this.room.price,
-            (this.room.price * this.reserveRoom.n_rooms) * 0.18,
-            (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18
-          );
-          setTimeout(() => {
-            // window.location.reload();
-          }, 1500);
-
           console.table(this.reserveRoom)
         })
+      /***********************************************/
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+      /***********************************************/
     } else {
       alert("Completar todos los campos");
     }
@@ -236,7 +240,7 @@ export class ReservationComponent implements OnInit {
     };
 
     pdfMake.createPdf(documentDefinition).open();
-    // pdfMake.createPdf(documentDefinition).download('factura.pdf');
+    pdfMake.createPdf(documentDefinition).download('factura.pdf');
   }
 
 }
