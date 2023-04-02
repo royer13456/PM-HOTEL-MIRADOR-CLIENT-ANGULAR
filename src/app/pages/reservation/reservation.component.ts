@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomService } from './../../services/room.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Room, Reservation } from 'src/app/interface';
+import { ReserveService } from "./../../services/reserve.service";
 
 const pdfMake = require('pdfmake/build/pdfmake.js');
 const pdfFonts = require('pdfmake/build/vfs_fonts.js');
@@ -40,7 +41,7 @@ export class ReservationComponent implements OnInit {
 
   date: Date = new Date();
 
-  constructor(private roomService: RoomService, private activatedRoute: ActivatedRoute) {
+  constructor(private roomService: RoomService, private activatedRoute: ActivatedRoute, private reserveService: ReserveService, private router: Router) {
     const currentDate = new Date();
     this.minDate = currentDate.toISOString().split('T')[0];
   }
@@ -72,7 +73,7 @@ export class ReservationComponent implements OnInit {
       this.reserveRoom.n_rooms--
     }
   }
-  
+
   reserve() {
     if (this.reserveRoom.from &&
       this.reserveRoom.to &&
@@ -80,15 +81,21 @@ export class ReservationComponent implements OnInit {
       this.reserveRoom.email &&
       this.reserveRoom.phone) {
       // Realizar acciones en caso de que todos los campos estén completos
-      this.generatePDF(
-        this.reserveRoom.names,
-        this.room.id,
-        this.room.description,
-        this.reserveRoom.n_rooms,
-        this.room.price,
-        (this.room.price * this.reserveRoom.n_rooms) * 0.18,
-        (this.room.price * this.reserveRoom.n_rooms)+(this.room.price * this.reserveRoom.n_rooms) * 0.18
-      );
+      this.reserveService.getReservations()
+        .subscribe((res) => {
+          console.log(res.length + 1);
+          this.generatePDF(
+            `Nº 0000${res.length + 1}`,
+            this.reserveRoom.names,
+            this.room.id,
+            this.room.description,
+            this.reserveRoom.n_rooms,
+            this.room.price,
+            (this.room.price * this.reserveRoom.n_rooms) * 0.18,
+            (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18
+          );
+          window.location.reload();
+        })
     } else {
       // Mostrar mensaje de error o realizar acciones en caso de que falten campos
       alert("Completar todos los campos");
@@ -96,6 +103,7 @@ export class ReservationComponent implements OnInit {
   }
 
   generatePDF(
+    codifoFactura: any,
     names: string,
     codigo: any,
     descripcion: string,
@@ -118,7 +126,7 @@ export class ReservationComponent implements OnInit {
             },
             {
               width: "*",
-              text: "FACTURA ELECTRÓNICA\nFHTT-000001",
+              text: `FACTURA ELECTRÓNICA\n${codifoFactura}`,
               fontSize: 20,
               bold: true,
               alignment: "right"
@@ -218,6 +226,7 @@ export class ReservationComponent implements OnInit {
     };
 
     pdfMake.createPdf(documentDefinition).open();
+    // pdfMake.createPdf(documentDefinition).download('factura.pdf');
   }
 
 }
