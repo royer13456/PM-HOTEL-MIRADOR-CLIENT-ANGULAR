@@ -12,6 +12,7 @@ import { AdminMainComponent } from './components/admin-main/admin-main.component
 import { RoomFormComponent } from './components/room-form/room-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'contacto', component: ContactUsComponent
+  },
+  {
+    path: 'gallery', component: GalleryComponent
   },
   {
     path: 'admin', component: AdminComponent, canActivate: [AdminGuard], children: [

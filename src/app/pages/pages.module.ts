@@ -16,6 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReservationComponent } from './reservation/reservation.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -28,7 +29,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     AboutComponent,
     AdminComponent,
     LoginAdminComponent,
-    ReservationComponent
+    ReservationComponent,
+    GalleryComponent
   ],
   imports: [
     CommonModule,

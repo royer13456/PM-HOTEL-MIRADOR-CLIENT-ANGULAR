@@ -1,139 +1,149 @@
-<main class="min-h-screen">
-  <section class="bg-[url('/assets/homepage-main2.png')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
-    <div class="bg-[rgba(35,35,35,.80)] h-[400px] md:h-[450px]">
+<div class='min-h-screen'>
+  <div class="bg-[url('/assets/homepage-main2.png')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
+    <div class="bg-[rgba(35,35,35,0.74)] h-[400px] md:h-[450px]">
       <app-navbar></app-navbar>
       <div class="flex flex-col items-center mt-10">
-        <h1 class="font-bold text-4xl lg:text-2xl text-center text-[rgb(239,239,239)] ">HOTEL MIRADOR TORRE TORRE</h1>
+        <!-- py-[110px] -->
+        <h1 class="font-bold text-2xl text-center text-[rgb(239,239,239)] sm:text-3xl">HOTEL MIRADOR TORRE TORRE</h1>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section
-    class="container grid justify-between gap-10 px-5 mx-auto mt-20 mb-20 lg:px-10 md:grid-cols-2 md:gap-20 max-w-[1200px]">
-    <div class="text-justify ">
-      <p class="text-xl font-bold text-center text- md:text-3xl lg:text-4xl">¿QUE NOS DISTINGUE?</p><br>
-      <p class="text-base tracking-normal text-left xl:text-2xl">El talento humano es sumamente importante para el
-        desarrollo de
-        nuestra misión. Un empleado contento generará un huésped contento, por eso uno de nuestros principales valores
-        son las personas empezando por nuestros empleados.</p>
-      <p class="text-base tracking-normal text-left xl:text-2xl">El compromiso de nuestro local es siempre brindar
-        confianza y
-        seguridad a
-        nuestro clientes. Y hacer de su estancia la mejor posible, brindandoles cuartos comodos y seguros.</p>
+  <div class="max-w-[1110px] lg:mx-auto ">
+
+    <div class="grid justify-between gap-10 px-10 mt-20 mb-20 md:grid-cols-2 md:gap-20 ">
+      <div class="text-justify ">
+        <p class="text-2xl font-bold text-center md:text-3xl lg:text-4xl">¿QUE NOS DISTINGUE?</p><br>
+        <p class="text-xl">Las personas son lo primero: El talento humano es sumamente importante para el desarrollo de
+          nuestra misión. Un empleado contento generará un huésped contento, por eso uno de nuestros principales valores
+          son las personas empezando por nuestros empleados.</p>
+        <p class="text-xl">El compromiso de nuestro local es siempre brindar confianza y seguridad a nuestro clientes. Y
+          hacer de su estancia la mejor posible, brindanloes cuartos comodos y seguros.</p>
+      </div>
+      <div class="flex items-center ">
+        <img class="" src="/assets/hotel-portada.jpg" alt="">
+      </div>
     </div>
-    <div class="flex items-center ">
-      <img class="" src="/assets/hotel-portada.jpg" alt="">
-    </div>
-  </section>
 
-  <section class="pt-20 pb-40 bg-[rgba(75,155,92,0.09)]">
-    <div class="flex flex-col items-center gap-10 px-10">
-      <p class="text-lg font-semibold text-center lg:text-3xl md:text-2xl">BENEFICIOS ADICIONALES</p>
-      <h4 class="text-center sm:text-xl">PARA HACER SU EXPERIENCIA AUN MAS COMPLETA OFRECEMOS LOS SIGUIENTES SERVICIOS
-      </h4>
+  </div>
 
-      <div class="grid items-center justify-center gap-20 pt-20 lg:grid-cols-3 xl:gap-40 ">
-        <div class="flex flex-col gap-5">
-          <div class="flex flex-row items-center justify-end gap-5">
-            <p class="text-lg">Seguridad 24H</p>
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-seguridad.png" alt="">
-          </div>
-          <div class="flex flex-row items-center justify-end gap-5">
-            <p class="text-lg text-right">Rampa para discapacitados</p>
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-discapacitado.png" alt="">
-          </div>
-          <div class="flex flex-row items-center justify-end gap-5">
-            <p class="text-lg text-right">Acceso gratis a internet </p>
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-wifi.png" alt="">
-          </div>
-          <div class="flex flex-row items-center justify-end gap-5">
-            <p class="text-lg text-right">Room Services 24H</p>
-            <img class="w-[30px] sm:w-[40px] " src="/assets/logo-services.png" alt="">
-          </div>
-        </div>
+  <div class="bg-[rgba(75,155,92,0.09)] pt-20 pb-40 ">
+    <div>
+      <div class="flex flex-col items-center gap-10 px-10">
+        <p class="text-2xl font-semibold text-center lg:text-3xl">BENEFICIOS ADICIONALES</p>
+        <h3 class="text-center sm:text-xl">PARA HACER SU EXPERIENCIA AUN MAS COMPLETA OFRECEMOS LOS SIGUIENTES SERVICIOS
+        </h3>
 
-        <div class="flex items-center justify-center">
-          <img class="sm:h-[300px] sm:w-[300px] w-[200px] h-[200px] rounded-[50%]"
-            src="/assets/atencion-cliente-hotel.jpg" alt="">
-        </div>
+        <div class="grid items-center justify-center gap-20 pt-20 lg:grid-cols-3 xl:gap-40 ">
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-row items-center justify-end gap-10">
+              <p>Seguridad 24H</p>
+              <img class="w-12 sm:w-14" src="/assets/logo-seguridad.png" alt="">
+            </div>
+            <div class="flex flex-row items-center justify-end gap-10">
+              <p class="text-right">Rampa para discapacitados</p>
+              <img class="w-12 sm:w-14" src="/assets/logo-discapacitado.png" alt="">
+            </div>
+            <div class="flex flex-row items-center justify-end gap-10">
+              <p class="text-right">Acceso gratis a internet </p>
+              <img class="w-12 sm:w-14" src="/assets/logo-wifi.png" alt="">
+            </div>
+            <div class="flex flex-row items-center justify-end gap-10">
+              <p class="text-right">Room Services 24H</p>
+              <img class="w-12 sm:w-14" src="/assets/logo-services.png" alt="">
+            </div>
+          </div>
 
-        <div class="flex flex-col gap-5">
-          <div class="flex flex-row items-center justify-start gap-5">
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-tarjeta.png" alt="">
-            <p class="text-lg">Aceptamos todas las tarjetas de crédito</p>
+          <div class="flex items-center justify-center">
+            <img class="rounded-[50%] w-52 h-52 sm:h-80 sm:w-80" src="/assets/atencion-cliente-hotel.jpg" alt="">
           </div>
-          <div class="flex flex-row items-center justify-start gap-5">
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-telefono.png" alt="">
-            <p class="text-lg">Realiza llamadas</p>
-          </div>
-          <div class="flex flex-row items-center justify-start gap-5">
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-hotel.png" alt="">
-            <p class="text-lg">Salas de espera</p>
-          </div>
-          <div class="flex flex-row items-center justify-start gap-5">
-            <img class="w-[30px] sm:w-[40px]" src="/assets/logo-carro.png" alt="">
-            <p class="text-lg">Estacionamiento interior</p>
+
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-row items-center justify-start gap-10">
+              <img class="w-12 sm:w-14" src="/assets/logo-tarjeta.png" alt="">
+              <p>Aceptamos todas las tarjetas de crédito</p>
+            </div>
+            <div class="flex flex-row items-center justify-start gap-10">
+              <img class="w-12 sm:w-14" src="/assets/logo-telefono.png" alt="">
+              <p>Realiza llamadas</p>
+            </div>
+            <div class="flex flex-row items-center justify-start gap-10">
+              <img class="w-12 sm:w-14" src="/assets/logo-hotel.png" alt="">
+              <p>Salas de espera</p>
+            </div>
+            <div class="flex flex-row items-center justify-start gap-10">
+              <img class="w-12 sm:w-14" src="/assets/logo-carro.png" alt="">
+              <p>Estacionamiento interior</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="bg-[url('/assets/baner.jpg')] bg-cover bg-center bg-local">
+  <div class="bg-[url('/assets/baner.jpg')] bg-cover bg-center bg-local">
     <div class="flex flex-col items-center gap-3 py-5 px-5 bg-[rgba(35,35,35,0.74)]">
-      <p class="text-2xl lg:text-3xl xl:text-4xl font-semibold text-center text-[rgb(239,239,239)]">HOTEL TORRE TORRE
+      <p class="text-2xl font-semibold text-center text-[rgb(239,239,239)] lg:text-3xl xl:text-4xl">HOTEL TORRE TORRE
       </p>
-      <p class="text-center text-[rgb(239,239,239)]">Jr.Torre torre 202-Huancayo</p>
+      <p class="text-center text-[rgb(239,239,239)]">Av. de los Patriotas 623, San Miguel – LIma – Perú</p>
     </div>
-  </section>
+  </div>
 
-  <section class="flex flex-col items-center gap-32 mt-32 mb-20">
-    <div class="flex flex-col items-center gap-10 px-5 sm:px-10 md:px-20 lg:px-40">
-      <p class="text-2xl lg:text-3xl font-medium text-[#489C5A]">HABITACIONES</p>
-      <p class="mx-auto text-center md:8/12 md:text-2xl">Nuestras habitaciones ofrecen todas las comodidades
-        e instalaciones para una estancia agradable y sin preocupaciones.</p>
-    </div>
-    <div class="flex flex-col items-center">
-      <div class="text-xl text-[#489C5A] flex flex-col items-center gap-2 mb-20">
-        <a href="">VER HABITACIONES</a>
-        <hr class="w-[100px]  border-solid border-b-2 border-[#489C5A]">
+  <div class="max-w-[1110px] lg:mx-auto ">
+    <div class="flex flex-col items-center gap-32 mt-32 mb-20">
+      <div class="flex flex-col items-center gap-10 px-5 sm:px-10 md:px-20">
+        <p class="text-2xl font-medium text-[#489C5A] lg:text-3xl">HABITACIONES</p>
+        <p class="text-center xl:text-xl">Nuestras habitaciones ofrecen todas las comodidades e instalaciones para una
+          estancia
+          agradable y sin preocupaciones. Ofrecemos un entorno acogedor minuciosamente pensado para brindarle el mayor
+          confort posible. Desde nuestras habitaciones podrá disfrutar de una privilegiada vista de todo el distrito de
+          San Miguel y el puerto del Callao. Todas nuestras habitaciones están equipadas con aire acondicionado, minibar
+          y
+          televisión LCD y minibar con costo adicional.</p>
       </div>
-      <div>
-        habitaciones
-      </div>
-    </div>
-  </section>
-
-  <section class="flex flex-col gap-20 pt-20 pb-32 ">
-    <h2 class="px-5 text-4xl text-center">NUESTRO HOTEL CERCA DE TÍ</h2>
-    <div class="flex flex-row flex-wrap items-center justify-center gap-20 px-10 lg:justify-between lg:gap-10 md:px-20">
-      <div class="w-full">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.7275224754753!2d-75.19675368459319!3d-12.062259245474513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97b6632b0cfd%3A0xf889e413488c25a0!2sHotel%20El%20Mirador%20%22Torre%20Torre%22!5e0!3m2!1ses-419!2spe!4v1679785921819!5m2!1ses-419!2spe"
-          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <div class="flex flex-col justify-between gap-5 lg:flex-row lg:w-full">
-        <div class="flex flex-row items-center gap-5">
-          <img class="w-[30px]" src="/assets/logo-ubicacion.png" alt="">
-          <p class="text-base">Jr.Torre torre 202-Huancayo</p>
+      <!-- <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center gap-2 mb-20 text-xl text-[#489C5A]">
+          <a href="">VER HABITACIONES</a>
+          <hr class="w-24 border-solid border-b-2 border-[#489C5A]">
         </div>
-        <div class="flex flex-row items-center gap-5">
-          <img class="w-[30px]" src="/assets/logo-telefono-movil.png" alt="">
-          <p class="text-base">+51 998 602 811</p>
+        <div>
+          habitaciones
         </div>
-        <div class="flex flex-row items-center gap-5">
-          <img class="w-[30px]" src="/assets/logo-email.png" alt="">
-          <p class="text-base">miradortorretorre<wbr>@gmail.com</p>
-        </div>
-      </div>
-      <div class="flex flex-col items-center w-full mt-10 text-center">
-        <a class="bg-[#489C5A] rounded text-[rgb(234,234,234)] px-10 py-3" href="">RESERVAR</a>
-      </div>
+      </div> -->
     </div>
 
-  </section>
+    <div class="flex flex-col gap-20 pt-20 pb-32 ">
+      <h2 class="px-5 text-4xl text-center">NUESTRO HOTEL CERCA DE TÍ</h2>
+      <div class="flex flex-row flex-wrap items-center justify-center gap-20 px-10 lg:justify-between lg:gap-10 ">
+        <div class="w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.7275224754753!2d-75.19675368459319!3d-12.062259245474513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97b6632b0cfd%3A0xf889e413488c25a0!2sHotel%20El%20Mirador%20%22Torre%20Torre%22!5e0!3m2!1ses-419!2spe!4v1679785921819!5m2!1ses-419!2spe"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="flex flex-col justify-between gap-5 lg:flex-row lg:w-full">
+          <div class="flex flex-row items-center gap-10">
+            <img class="w-8" src="/assets/logo-ubicacion.png" alt="">
+            <p>Jr.Torre torre 202-Huancayo</p>
+          </div>
+          <div class="flex flex-row items-center gap-10">
+            <img class="w-8" src="/assets/logo-telefono-movil.png" alt="">
+            <p>+51 998 602 811</p>
+          </div>
+          <div class="flex flex-row items-center gap-10">
+            <img class="w-8" src="/assets/logo-email.png" alt="">
+            <p>miradortorretorre<wbr>@gmail.com</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-center w-full mt-10 text-center">
+          <a class="bg-[#489C5A] rounded text-[rgb(234,234,234)] px-10 py-3" href="">RESERVAR</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
   <app-footer></app-footer>
-</main>
+</div>

@@ -1,43 +1,90 @@
-<app-navbar></app-navbar>
-<div class="pb-10">
-  <img class="w-full h-auto m-auto" src="/assets/about-hero.png" alt="hero" />
-  <div class="grid w-10/12 gap-5 m-auto mt-5">
-    <section class="flex flex-col-reverse lg:flex-row lg:gap-16 border-">
-      <img class="h-auto m-auto w-fullh" src="/assets/about01.png" alt="about01" />
-      <div class="flex flex-col gap-5 lg:-mt-16 lg:bg-white lg:p-5">
-        <h2 class="font-bold ">SOBRE NOSOTROS</h2>
-        <div>
-          <p>Somos una Empresa Huancaina que brinda servicios de hotelería a instituciones de alcance regional, nacional
-            e internacional así como a turistas en general.</p>
-          <p>En Mirador Hotel, contamos con modernas habitaciones equipadas y finamente decoradas con un estilo elegante
-            y acogedor, tratando de brindar un ambiente cálido, especial para el descanso y relajación.</p>
+<main class='min-h-screen'>
+  <div class="bg-[url('/assets/about-hero.png')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
+    <div class="bg-[rgba(35,35,35,0.74)] h-[400px] md:h-[450px]">
+      <app-navbar></app-navbar>
+      <div class="flex flex-col items-center mt-10">
+        <!-- py-[110px] -->
+        <h1 class="font-bold text-2xl sm:text-3xl text-center text-[rgb(239,239,239)] ">NOSOTROS</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="pb-32">
+    <div class=" max-w-[1110px] grid gap-40 mt-10 mx-5 md:mt-20 md:mx-20 lg:mt-36 lg:mx-32 xl:mx-auto">
+      <!-- mt-10 md:mt-20 lg:mt-36 px-5 sm:px-10 xl:px-28 -->
+      <div class="flex flex-col items-center justify-between gap-20 md:flex-row">
+        <div class="md:w-60 lg:w-80 lg:max-w-[400px]">
+          <p
+            class="text-3xl font-semibold md:text-5xl md:leading-[50px] lg:text-6xl lg:leading-[80px] xl:text-7xl xl:leading-[90px]">
+            EL HOTEL TORRE TORRE HUANCAYO</p>
+          <p class="xl:max-w-[300px]">Es una Empresa Huancaina que brinda servicios de hotelería a
+            instituciones de alcance regional, nacional e internacional así como a turistas en general. Es una Empresa
+            Huancaina que brinda servicios de hotelería a instituciones de alcance regional, nacional e internacional
+            así como a turistas en general.
+          </p>
+          <div class="mt-16">
+            <a class="bg-[#489C5A] px-5 py-2 rounded text-[rgb(249,249,249)] hover:bg-[#2c833f] md:px-8 md:py-3"
+              href="">NOS ENCUENTRAS</a>
+          </div>
+        </div>
+        <div class="">
+          <div
+            class="bg-[url('/assets/img-local.png')] bg-cover bg-center bg-local rounded-[50%] w-36 h-36 sm:w-60 sm:h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-[500px] xl:h-[500px]">
+            <div
+              class="border-solid border-[20px] border-[rgba(112,194,103,0.28)] rounded-[50%] xl:border-[40px] w-36 h-36 sm:w-60 sm:h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-[500px] xl:h-[500px]">
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="lg:flex lg:flex-row lg:gap-16">
-      <div class="flex flex-col gap-5">
-        <h2 class="relative font-bold">NUESTRA MISIÓN <span class="border__bottom"></span></h2>
-        <p>Somos una Empresa Huancaina que brinda servicios de hotelería a instituciones de alcance regional, nacional e
-          internacional así como a turistas en general.</p>
+
+      <div class="flex flex-col gap-20 ">
+
+        <div class="flex flex-col items-center justify-between gap-10 md:flex-row">
+          <div class="md:w-[400px] lg:w-[500px]">
+            <p
+              class="text-xl font-medium text-center border-solid border-b-4 border-[#489C5A] sm:text-2xl sm:text-left lg:text-4xl">
+              NUESTRA MISIÓN</p>
+            <p class="pt-5">La piscina en la azotea de Hyatt Centric San Isidro Lima es el lugar perfecto para relajarse
+              tras un día de turismo por la ciudad. Tome sus gafas de natación y dé unas brazadas para comenzar el día,
+              o traiga su libro favorito para relajarse junto a la piscina en una cómoda silla reclinable.</p>
+          </div>
+          <div class="">
+            <img class="rounded-[30px] md:w-[300px] lg:w-[500px] lg:max-h-[300px]" src="/assets/about02.png" alt="">
+          </div>
+        </div>
+
+        <div class="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
+          <div class="">
+            <img class="rounded-[30px] md:w-[300px] lg:w-[500px] lg:max-h-[300px]" src="/assets/about02.png" alt="">
+          </div>
+          <div class="md:w-[400px] lg:w-[500px]">
+            <p
+              class="text-xl font-medium text-center border-solid border-b-4 border-[#489C5A] sm:text-2xl sm:text-left lg:text-4xl">
+              NUESTRA VISIÓN</p>
+            <p class="pt-5">La piscina en la azotea de Hyatt Centric San Isidro Lima es el lugar perfecto para relajarse
+              tras un día de turismo por la ciudad. Tome sus gafas de natación y dé unas brazadas para comenzar el día,
+              o traiga su libro favorito para relajarse junto a la piscina en una cómoda silla reclinable.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-between gap-10 md:flex-row">
+          <div class="md:w-[400px] lg:w-[500px]">
+            <p
+              class="text-xl font-medium text-center border-solid border-b-4 border-[#489C5A] sm:text-2xl sm:text-left lg:text-4xl">
+              NUESTROS VALORES</p>
+            <p class="pt-5">La piscina en la azotea de Hyatt Centric San Isidro Lima es el lugar perfecto para relajarse
+              tras un día de turismo por la ciudad. Tome sus gafas de natación y dé unas brazadas para comenzar el día,
+              o traiga su libro favorito para relajarse junto a la piscina en una cómoda silla reclinable.</p>
+          </div>
+          <div class="">
+            <img class=" rounded-[30px] md:w-[300px] lg:w-[500px] lg:max-h-[300px]" src="/assets/about02.png" alt="">
+          </div>
+        </div>
+
       </div>
-      <img class="h-auto m-auto w-fullh" src="/assets/about02.png" alt="about02" />
-    </section>
-    <section class="flex flex-col-reverse lg:flex-row lg:gap-16">
-      <img class="h-auto m-auto w-fullh" src="/assets/about03.png" alt="about03" />
-      <div class="flex flex-col gap-5">
-        <h2 class="relative font-bold">NUESTRA VISIÓN <span class="border__bottom"></span></h2>
-        <p>Somos una Empresa Huancaina que brinda servicios de hotelería a instituciones de alcance regional, nacional e
-          internacional así como a turistas en general.</p>
-      </div>
-    </section>
-    <section class="lg:flex lg:flex-row lg:gap-16">
-      <div class="flex flex-col gap-5">
-        <h2 class="relative font-bold">NUESTROS VALORES <span class="border__bottom"></span></h2>
-        <p>Somos una Empresa Huancaina que brinda servicios de hotelería a instituciones de alcance regional, nacional e
-          internacional así como a turistas en general.</p>
-      </div>
-      <img class="h-auto m-auto w-fullh" src="/assets/about04.png" alt="about04" />
-    </section>
+
+    </div>
   </div>
-</div>
-<app-footer></app-footer>
+  <app-footer></app-footer>
+
+</main>

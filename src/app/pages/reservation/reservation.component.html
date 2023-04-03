@@ -1,6 +1,14 @@
 <main class="relative flex flex-col min-h-screen">
+  <div class="bg-[url('/assets/homepage-main2.png')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
+    <div class="bg-[rgba(35,35,35,0.74)] h-[400px] md:h-[450px]">
+      <app-navbar></app-navbar>
+      <div class="flex flex-col items-center mt-10">
+        <!-- py-[110px] -->
+        <h1 class="font-bold text-2xl text-center text-[rgb(239,239,239)] sm:text-3xl">RESERVA</h1>
+      </div>
+    </div>
+  </div>
   <!-- <div class="absolute top-0 h-[20rem] w-full -z-10 bg-[#000]"></div> -->
-  <app-navbar></app-navbar>
   <section class="container flex-1 mx-auto mt-20">
     <div class="grid gap-5 md:grid-cols-2">
       <mat-card class="w-8/12 mx-auto md:w-7/12 h-min">
@@ -29,6 +37,7 @@
         </div>
 
         <label for="rooms">
+          <p>Habitaciones:</p>
           <div class="flex items-center justify-start">
             <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-l-lg"
               (click)="decrement()">-</button>

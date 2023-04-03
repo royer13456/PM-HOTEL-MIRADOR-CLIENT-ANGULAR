@@ -1,7 +1,8 @@
-<nav class="bg-black">
-  <div class="flex flex-wrap items-stretch justify-between px-5 pt-10 lg:mx-16">
+<nav class="">
+  <div
+    class="flex flex-wrap justify-between items-stretch lg:mx-16 px-5 pt-10 border-solid border-b-[1px] border-[#489C5A]">
     <a href="/" class="flex items-center">
-      <img src="/assets/logo.jpg" class="w-16 pb-2 rounded-xl md:w-20" alt="Logo" />
+      <img src="/assets/logo.jpg" class="w-16 pb-2 rounded-md md:w-20" alt="Logo" />
     </a>
 
     <button data-collapse-toggle="navbar-default" type="button"
@@ -16,33 +17,33 @@
       </svg>
     </button>
 
-    <div class="flex flex-row justify-end w-full md:block md:w-auto md:mt-5" id="navbar-default">
+    <div class="flex flex-row justify-end hidden w-full md:block md:w-auto md:mt-5" id="navbar-default">
       <ul
         class="flex flex-col md:flex-row h-full gap-5 md:gap-12 w-[200px] md:w-full bg-[rgba(35,35,35,0.74)] px-4 py-4 md:px-0 md:p-0 md:bg-transparent">
-        <li>
+        <li class="hover:border-solid hover:border-b-2 hover:border-[#489C5A] text-center">
           <div class="flex items-center h-full px-2 ">
-            <a routerLink="/habitaciones" class="link">
+            <a href="/habitaciones" class=" hover:text-[#489C5A] text-[rgb(239,239,239)]">
               HABITACIONES
             </a>
           </div>
         </li>
-        <li>
+        <li class="hover:border-solid hover:border-b-2 hover:border-[#489C5A]">
           <div class="flex items-center h-full px-2">
-            <a routerLink="/about" class="link">
+            <a href="/about" class=" hover:text-[#489C5A] text-[rgb(239,239,239)]">
               SOBRE NOSOTROS
             </a>
           </div>
         </li>
-        <li>
+        <li class="hover:border-solid hover:border-b-2 hover:border-[#489C5A]">
           <div class="flex items-center h-full px-2">
-            <a routerLink="/#" class="link">
+            <a href="/gallery" class=" hover:text-[#489C5A] text-[rgb(239,239,239)]">
               GALERIA
             </a>
           </div>
         </li>
-        <li>
+        <li class="hover:border-solid hover:border-b-2 hover:border-[#489C5A]">
           <div class="flex items-center h-full px-2">
-            <a routerLink="/contacto" class="link">
+            <a href="/contacto" class=" hover:text-[#489C5A] text-[rgb(239,239,239)]">
               CONTÁCTANOS
             </a>
           </div>
