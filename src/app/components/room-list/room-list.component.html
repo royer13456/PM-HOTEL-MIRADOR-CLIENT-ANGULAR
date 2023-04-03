@@ -6,7 +6,7 @@
           <mat-card>
             <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
             <div class="flex justify-between">
-              <mat-card-title class="capitalize truncate">{{ room.title }}</mat-card-title>
+              <mat-card-title class="pt-3 capitalize truncate">{{ room.title }}</mat-card-title>
             </div>
             <mat-card-actions>
               <a [routerLink]="['/admin/edit/',room.id]"
@@ -23,7 +23,7 @@
           <mat-card>
             <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
             <div class="flex justify-between">
-              <mat-card-title class="capitalize truncate">{{ room.title }}</mat-card-title>
+              <mat-card-title class="pt-3 capitalize truncate">{{ room.title }}</mat-card-title>
             </div>
             <mat-card-actions>
               <a [routerLink]="['/admin/edit/',room.id]"
