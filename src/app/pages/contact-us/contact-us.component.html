@@ -10,7 +10,7 @@
   </div>
 
   <div class="flex flex-col items-center flex-1 my-20">
-    <form class="flex flex-col gap-4 p-5  sm:w-[400px] w-[250px]" action="">
+    <form (submit)="createMessage()" class="flex flex-col gap-4 p-5  sm:w-[400px] w-[250px]" action="">
       <label for="">Nombres y Apellidos</label>
       <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.names"
         name="names">
@@ -23,10 +23,10 @@
       <label for="">Mensaje</label>
       <textarea class="px-3 py-2 border-b-2 border-solid border-slate-800" name="message" id="" cols="30" rows="5"
         [(ngModel)]="message.message"></textarea>
+      <div class="flex flex-col items-center pt-20">
+        <button type="submit" class="px-12 py-2 text-md text-white rounded-sm bg-[#489C5A]">Enviar</button>
+      </div>
     </form>
-    <div class="flex flex-col items-center pt-20">
-      <button class="px-12 py-2 text-md text-white rounded-sm bg-[#489C5A]">Enviar</button>
-    </div>
   </div>
   <app-footer></app-footer>
 </div>

@@ -18,7 +18,7 @@ export class ContactUsComponent implements OnInit {
     message: "",
   }
 
-  constructor(private messageService: ContactService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private messageService: ContactService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -26,13 +26,14 @@ export class ContactUsComponent implements OnInit {
 
   createMessage() {
     delete this.message.id;
-
-    this.messageService.createMessageRequest(this.message)
-      .subscribe(
-        (response) => {
-          this.router.navigate(['/admin/message'])
-        }
-      )
+    if (!this.message.names &&
+      !this.message.correo &&
+      !this.message.celular) {
+      console.log("error")
+    } else {
+      this.messageService.createMessageRequest(this.message)
+        .subscribe(res => this.router.navigate(['/']))
+    }
   }
 
 

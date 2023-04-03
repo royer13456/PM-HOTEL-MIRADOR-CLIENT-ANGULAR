@@ -23,8 +23,7 @@
           <mat-card>
             <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
             <div class="flex justify-between">
-              <mat-card-title class="capitalize">{{ room.title }}</mat-card-title>
-              <mat-card-subtitle>S/{{ room.price }}</mat-card-subtitle>
+              <mat-card-title class="capitalize truncate">{{ room.title }}</mat-card-title>
             </div>
             <mat-card-actions>
               <a [routerLink]="['/admin/edit/',room.id]"
