@@ -13,6 +13,7 @@ import { PipesModule } from '../pipes/pipes.module';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -24,7 +25,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ContactUsComponent,
     AboutComponent,
     AdminComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    GalleryComponent
   ],
   imports: [
     CommonModule,

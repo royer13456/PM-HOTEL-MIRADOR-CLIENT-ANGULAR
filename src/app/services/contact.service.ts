@@ -15,7 +15,7 @@ export class ContactService {
     return this.http.get<ContactMessage[]>(this.API_URL);
   }
 
-  createMessage(message: ContactMessage) {
+  createMessageRequest(message: ContactMessage) {
     return this.http.post(this.API_URL, message);
   }
 }

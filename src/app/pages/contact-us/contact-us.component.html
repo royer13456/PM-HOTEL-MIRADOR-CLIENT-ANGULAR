@@ -1,19 +1,28 @@
-<div class="flex flex-col min-h-screen ">
-  <app-navbar></app-navbar>
-  <div class="flex flex-col items-center flex-1 ">
-    <form class="flex flex-col gap-4 p-5 w-[400px]" action="">
-      <label for="" class="text-md">Nombres y Apellidos</label>
-      <input type="text" class="px-3 py-2 border-b-2 border-solid border-slate-800">
-      <label for="" class="text-md">Correo Electronico</label>
-      <input type="text" class="px-3 py-2 border-b-2 border-solid border-slate-800">
-      <label for="" class="text-md">Celular</label>
-      <input type="text" class="px-3 py-2 border-b-2 border-solid border-slate-800">
-      <label for="" class="text-md">Mensaje</label>
-      <textarea type="text" cols="30" rows="5" class="px-3 py-5 border-b-2 border-solid border-slate-800"></textarea>
-      <div class="flex flex-col items-center pt-20">
-        <button class="px-10 py-2 text-lg font-semibold text-white rounded-sm main-color">Enviar</button>
+<div class="min-h-screen ">
+  <div class="bg-[url('/assets/homepage-main2.png')] bg-cover bg-center bg-local h-[300px] md:h-[350px]">
+    <div class="bg-[rgba(35,35,35,0.74)] h-[300px] md:h-[350px]">
+      <app-navbar></app-navbar>
+      <div class="flex flex-col items-center mt-10">
+        <!-- py-[110px] -->
+        <h1 class="font-bold text-2xl sm:text-3xl text-center text-[rgb(239,239,239)] ">CONTÁCTANOS</h1>
       </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center flex-1 my-20">
+    <form class="flex flex-col gap-4 p-5  sm:w-[400px] w-[250px]" action="">
+      <label for="">Nombres y Apellidos</label>
+        <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.names" name="names">
+      <label for="">Email</label>
+        <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.correo" name="correo">
+      <label for="">Telefono</label>
+        <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.celular" name="celular">
+      <label for="">Mensaje</label>
+        <textarea class="px-3 py-2 border-b-2 border-solid border-slate-800" name="message" id="" cols="30" rows="5" [(ngModel)]="message.message" ></textarea>
     </form>
+    <div class="flex flex-col items-center pt-20">
+      <button class="px-12 py-2 text-md text-white rounded-sm bg-[#489C5A]">Enviar</button>
+    </div>
   </div>
   <app-footer></app-footer>
 </div>

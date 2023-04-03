@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ContactMessage } from 'src/app/interface';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  message: ContactMessage = {
+    id: 0,
+    names: "",
+    correo: "",
+    celular: "",
+    message: "",
+  }
+
+ constructor (private messageService: ContactService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+
   }
+
+    createMessage() {
+      delete this.message.id;
+
+      this.messageService.createMessageRequest(this.message)
+      .subscribe(
+        (Response) => {
+          this.router.navigate(['/admin/message'])
+        } 
+      )
+    }
+
+ 
 
 }

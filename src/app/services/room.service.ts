@@ -20,7 +20,7 @@ export class RoomService {
   }
 
   createRoomRequest(room: Room) {
-    return this.http.post<Room>(this.API_URL, room)
+    return this.http.post<Room>(this.API_URL, room);
   }
 
   updateRoomRequest(id: string | number, updatedRoom: Room) {
