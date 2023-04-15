@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AdminService } from './../../services/admin.service';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
@@ -12,7 +12,13 @@ import { Admin } from 'src/app/interface';
 })
 export class LoginAdminComponent implements OnInit {
 
-  constructor(private adminService: AdminService, private router: Router, private LSService: LocalstorageService) { }
+  private adminService = inject(AdminService);
+
+  private router = inject(Router);
+
+  private LSService = inject(LocalstorageService);
+
+  constructor() { }
 
   admin: Admin = { user: '', password: '' };
 
