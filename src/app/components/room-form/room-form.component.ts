@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
@@ -10,7 +10,7 @@ import { RoomService } from 'src/app/services/room.service';
 })
 export class RoomFormComponent implements OnInit {
 
-  room: Room = {
+  public room: Room = {
     id: 0,
     image_url: "",
     title: "",
@@ -21,13 +21,20 @@ export class RoomFormComponent implements OnInit {
     created_at: new Date(),
   }
 
-  categories: string[] = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
+  public categories: string[] = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
 
-  edit: boolean = false;
+  public edit: boolean = false;
 
-  constructor(private roomService: RoomService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  public id: number = 0;
 
-  id: number = 0;
+  private roomService = inject(RoomService);
+
+  private router = inject(Router);
+
+  private activatedRoute = inject(ActivatedRoute);
+
+  constructor() { }
+
 
   ngOnInit(): void {
     const { id } = this.activatedRoute.snapshot.params;
@@ -72,6 +79,5 @@ export class RoomFormComponent implements OnInit {
         }
       )
   }
-
 
 }
