@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ContactMessage } from 'src/app/interface';
 import { ContactService } from './../../services/contact.service';
 
@@ -9,9 +9,11 @@ import { ContactService } from './../../services/contact.service';
 })
 export class MessagesComponent implements OnInit {
 
-  messages: ContactMessage[] = [];
+  public messages: ContactMessage[] = [];
 
-  constructor(private contactService: ContactService) { }
+  private contactService = inject(ContactService);
+
+  constructor() { }
 
   ngOnInit(): void {
     this.contactService.getMessagesRequest()
