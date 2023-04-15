@@ -1,5 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContactMessage } from 'src/app/interface';
 import { ContactService } from 'src/app/services/contact.service';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RoomService } from './../../services/room.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Room, Reservation } from 'src/app/interface';
 import { ReserveService } from "./../../services/reserve.service";
 
