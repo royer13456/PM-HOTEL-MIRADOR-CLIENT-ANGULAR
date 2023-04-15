@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RoomService } from './../../services/room.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Room, Reservation } from 'src/app/interface';
@@ -14,7 +14,7 @@ const pdfFonts = require('pdfmake/build/vfs_fonts.js');
 })
 export class ReservationComponent implements OnInit {
 
-  room: Room = {
+  public room: Room = {
     id: 0,
     image_url: '',
     price: 0,
@@ -25,7 +25,7 @@ export class ReservationComponent implements OnInit {
     created_at: new Date(),
   }
 
-  reserveRoom: Reservation = {
+  public reserveRoom: Reservation = {
     id: 0,
     code: "",
     from: "",
@@ -37,13 +37,19 @@ export class ReservationComponent implements OnInit {
     total: 0,
   }
 
-  minDate: string;
+  public minDate: string;
 
-  date: Date = new Date();
+  public date: Date = new Date();
 
-  reservesLenght: number = 0;
+  public reservesLenght: number = 0;
 
-  constructor(private roomService: RoomService, private activatedRoute: ActivatedRoute, private reserveService: ReserveService, private router: Router) {
+  private roomService = inject(RoomService);
+
+  private activatedRoute = inject(ActivatedRoute);
+
+  private reserveService = inject(ReserveService);
+
+  constructor() {
     const currentDate = new Date();
     this.minDate = currentDate.toISOString().split('T')[0];
   }
@@ -117,7 +123,7 @@ export class ReservationComponent implements OnInit {
   }
 
   generatePDF(
-    codifoFactura: any,
+    codigoFactura: any,
     names: string,
     codigo: any,
     descripcion: string,
@@ -140,7 +146,7 @@ export class ReservationComponent implements OnInit {
             },
             {
               width: "*",
-              text: `FACTURA ELECTRÓNICA\n${codifoFactura}`,
+              text: `NOTA DE VENTA ELECTRÓNICA\n${codigoFactura}`,
               fontSize: 20,
               bold: true,
               alignment: "right"

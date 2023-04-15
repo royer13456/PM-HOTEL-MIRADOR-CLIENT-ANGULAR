@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RoomService } from './../../services/room.service';
 import { Room } from './../../interface/index';
 
@@ -10,18 +10,19 @@ import { Room } from './../../interface/index';
 })
 export class RoomComponent implements OnInit {
 
-  roomList: Room[] = [];
+  public roomList: Room[] = [];
 
-  descriptions: string[] = []
+  public descriptions: string[] = []
 
-  // "Estándar", "Doble ejecutivo", "Tripe ejecutivo"
-  estandarRooms: Room[] = [];
+  public estandarRooms: Room[] = [];
 
-  dobleRooms: Room[] = [];
+  public dobleRooms: Room[] = [];
 
-  tripleRooms: Room[] = [];
+  public tripleRooms: Room[] = [];
 
-  constructor(private roomService: RoomService) { }
+  private roomService = inject(RoomService)
+
+  constructor() { }
 
   ngOnInit() {
     this.roomService.getRoomsRequest()
@@ -32,7 +33,5 @@ export class RoomComponent implements OnInit {
         this.tripleRooms = this.roomList.filter(room => room.category === "Tripe ejecutivo");
       })
   }
-
-
-
+  
 }
