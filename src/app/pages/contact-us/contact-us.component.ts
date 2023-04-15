@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactMessage } from 'src/app/interface';
 import { ContactService } from 'src/app/services/contact.service';
@@ -8,9 +8,9 @@ import { ContactService } from 'src/app/services/contact.service';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent {
 
-  message: ContactMessage = {
+  public message: ContactMessage = {
     id: 0,
     names: "",
     correo: "",
@@ -18,11 +18,10 @@ export class ContactUsComponent implements OnInit {
     message: "",
   }
 
-  constructor(private messageService: ContactService, private router: Router) { }
+  private messageService = inject(ContactService);
+  private router = inject(Router);
 
-  ngOnInit(): void {
-
-  }
+  constructor() { }
 
   createMessage() {
     delete this.message.id;
