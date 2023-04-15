@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -7,13 +7,14 @@ import { AdminService } from 'src/app/services/admin.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
 
-  constructor(private adminService: AdminService, private router: Router) { }
+  private adminService = inject(AdminService);
 
-  ngOnInit(): void {
-  }
-  
+  private router = inject(Router);
+
+  constructor() { }
+
   logOut() {
     this.adminService.logout()
     this.router.navigate(['/'])
