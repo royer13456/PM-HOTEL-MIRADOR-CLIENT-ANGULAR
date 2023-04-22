@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RoomComponent } from './pages/room/room.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -18,10 +17,10 @@ const routes: Routes = [
     path: '', loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
   },
   {
-    path: 'habitaciones', component: RoomComponent
+    path: 'habitaciones', loadComponent: () => import('./pages/roomspage/roomspage.component').then(m => m.RoomspageComponent)
   },
   {
-    path: 'about', component: AboutComponent
+    path: 'about', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
   },
   {
     path: 'contacto', component: ContactUsComponent

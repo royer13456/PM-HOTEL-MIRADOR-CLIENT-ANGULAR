@@ -1,14 +1,18 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { RoomService } from './../../services/room.service';
-import { Room } from './../../interface/index';
-
+import { CommonModule } from '@angular/common';
+import { Room } from 'src/app/interface';
+import { RoomService } from 'src/app/services/room.service';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @Component({
-  selector: 'app-room',
-  templateUrl: './room.component.html',
-  styleUrls: ['./room.component.css']
+  selector: 'app-roomspage',
+  standalone: true,
+  imports: [CommonModule,ComponentsModule],
+  templateUrl: './roomspage.component.html',
+  styleUrls: ['./roomspage.component.css']
 })
-export class RoomComponent implements OnInit {
+export class RoomspageComponent implements OnInit {
+
 
   public roomList: Room[] = [];
 
@@ -33,4 +37,5 @@ export class RoomComponent implements OnInit {
         this.tripleRooms = this.roomList.filter(room => room.category === "Tripe ejecutivo");
       })
   }
+
 }

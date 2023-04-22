@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from '../components/components.module';
-import { RoomComponent } from './room/room.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -22,9 +20,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
-    RoomComponent,
     ContactUsComponent,
-    AboutComponent,
     AdminComponent,
     LoginAdminComponent,
     ReservationComponent,
@@ -43,9 +39,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     ReactiveFormsModule,
   ],
   exports: [
-    RoomComponent,
     ContactUsComponent,
-    AboutComponent,
     AdminComponent,
     LoginAdminComponent
   ]
