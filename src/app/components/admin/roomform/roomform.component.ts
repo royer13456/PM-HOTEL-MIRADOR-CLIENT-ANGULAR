@@ -3,15 +3,22 @@ import { CommonModule } from '@angular/common';
 import { Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { CardformComponent } from '../cardform/cardform.component';
 
 @Component({
   selector: 'app-roomform',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, CardformComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    CardformComponent
+  ],
   templateUrl: './roomform.component.html',
   styleUrls: ['./roomform.component.css'],
 
@@ -29,7 +36,7 @@ export class RoomformComponent implements OnInit {
     created_at: new Date(),
   }
 
-  public categories: string[] = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
+  public categories: Array<string> = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
 
   public edit: boolean = false;
 
