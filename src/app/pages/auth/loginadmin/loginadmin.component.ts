@@ -1,16 +1,19 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { AdminService } from './../../services/admin.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AdminService } from 'src/app/services/admin.service';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
 import { Admin } from 'src/app/interface';
 
-
 @Component({
-  selector: 'app-login-admin',
-  templateUrl: './login-admin.component.html',
-  styleUrls: ['./login-admin.component.css']
+  selector: 'app-loginadmin',
+  standalone: true,
+  imports: [CommonModule,FormsModule],
+  templateUrl: './loginadmin.component.html',
+  styleUrls: ['./loginadmin.component.css']
 })
-export class LoginAdminComponent implements OnInit {
+export class LoginadminComponent implements OnInit {
 
   private adminService = inject(AdminService);
 

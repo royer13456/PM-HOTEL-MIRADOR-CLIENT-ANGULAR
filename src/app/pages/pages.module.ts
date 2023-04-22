@@ -12,6 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReservationComponent } from './reservation/reservation.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { LoginadminComponent } from './auth/loginadmin/loginadmin.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     AdminComponent,
     LoginAdminComponent,
     ReservationComponent,
+    LoginadminComponent,
   ],
   imports: [
     CommonModule,
