@@ -12,7 +12,7 @@
   <section class="container flex-1 mx-auto mt-20">
     <div class="grid gap-5 md:grid-cols-2">
       <mat-card class="w-8/12 mx-auto md:w-7/12 h-min">
-        <img class="mx-auto" [src]="room.image_url" [alt]="room.title" width="auto" height="auto">
+        <img class="mx-auto" [src]="room.image_url" [alt]="room.title">
         <p class="p-3 text-2xl text-center capitalize">{{room.title}}</p>
         <ul>
           <li *ngFor="let d of room.description | description" class="text-lg truncate ">
