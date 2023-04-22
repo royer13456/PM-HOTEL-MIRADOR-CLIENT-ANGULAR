@@ -5,11 +5,12 @@ import { RoomService } from 'src/app/services/room.service';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { RoomcardComponent } from 'src/app/components/client/roomcard/roomcard.component';
+import { CardskeletonComponent } from 'src/app/shared/cardskeleton/cardskeleton.component';
 
 @Component({
   selector: 'app-roomspage',
   standalone: true,
-  imports: [CommonModule,NavbarComponent,FooterComponent,RoomcardComponent],
+  imports: [CommonModule, NavbarComponent, FooterComponent, RoomcardComponent,CardskeletonComponent],
   templateUrl: './roomspage.component.html',
   styleUrls: ['./roomspage.component.css']
 })
