@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminGuard } from './pages/admin/admin.guard';
-import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
+// import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
 import { RoomFormComponent } from './components/room-form/room-form.component';
@@ -46,7 +46,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'login', component: LoginAdminComponent
+    path: 'login', loadComponent: () => import('./pages/auth/loginadmin/loginadmin.component').then(m => m.LoginadminComponent)
   },
   {
     path: 'reservation/:id', component: ReservationComponent
