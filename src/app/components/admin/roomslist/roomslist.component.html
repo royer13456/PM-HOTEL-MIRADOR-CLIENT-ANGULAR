@@ -4,7 +4,8 @@
       <div class="grid w-11/12 grid-cols-4 m-auto gap-x-5 gap-y-10">
         <ng-container *ngFor="let room of enabledRooms">
           <mat-card>
-            <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
+            <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40" width="auto"
+              height="auto">
             <div class="flex justify-between">
               <mat-card-title class="pt-3 capitalize truncate">{{ room.title }}</mat-card-title>
             </div>
@@ -21,7 +22,8 @@
       <div class="grid w-11/12 grid-cols-4 m-auto gap-x-5 gap-y-10">
         <ng-container *ngFor="let room of disabledRooms">
           <mat-card>
-            <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40">
+            <img [src]="room.image_url" alt="Imagen habitación" class="object-cover w-full max-h-40" width="auto"
+              height="auto">
             <div class="flex justify-between">
               <mat-card-title class="pt-3 capitalize truncate">{{ room.title }}</mat-card-title>
             </div>

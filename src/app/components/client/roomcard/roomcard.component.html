@@ -1,7 +1,7 @@
 <section [ngClass]="room.visible?'block':'hidden'"
   class="max-w-xs m-auto bg-white border border-gray-200 rounded-lg shadow">
 
-  <img class="object-cover w-full rounded-t-lg max-h-40" [src]="room.image_url" [alt]="room.title" loading="lazy" />
+  <img class="object-cover w-full rounded-t-lg max-h-40" [src]="room.image_url" [alt]="room.title" loading="lazy" width="auto" height="auto"/>
 
   <div class="p-3">
     <h1 class="mb-2 text-lg font-bold tracking-tight text-gray-900 capitalize">{{room.title}}</h1>
