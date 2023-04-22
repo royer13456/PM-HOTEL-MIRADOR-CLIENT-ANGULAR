@@ -33,5 +33,4 @@ export class RoomComponent implements OnInit {
         this.tripleRooms = this.roomList.filter(room => room.category === "Tripe ejecutivo");
       })
   }
-  
 }
