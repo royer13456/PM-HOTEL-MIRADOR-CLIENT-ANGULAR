@@ -11,9 +11,10 @@ import { CardformComponent } from '../cardform/cardform.component';
 @Component({
   selector: 'app-roomform',
   standalone: true,
-  imports: [CommonModule,FormsModule,MatFormFieldModule,MatSelectModule,CardformComponent],
+  imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, CardformComponent],
   templateUrl: './roomform.component.html',
-  styleUrls: ['./roomform.component.css']
+  styleUrls: ['./roomform.component.css'],
+
 })
 export class RoomformComponent implements OnInit {
 
