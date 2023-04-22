@@ -8,10 +8,11 @@ import { MatListModule } from '@angular/material/list';
 @Component({
   selector: 'app-cardform',
   standalone: true,
-  imports: [CommonModule,PipesModule,MatCardModule,MatListModule],
+  imports: [CommonModule, PipesModule, MatCardModule, MatListModule],
   templateUrl: './cardform.component.html',
   styleUrls: ['./cardform.component.css']
 })
+
 export class CardformComponent implements OnInit {
 
   @Input() room: Room = {

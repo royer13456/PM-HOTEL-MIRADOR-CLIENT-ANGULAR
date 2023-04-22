@@ -7,6 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { CardformComponent } from '../cardform/cardform.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-roomform',
@@ -17,11 +21,15 @@ import { CardformComponent } from '../cardform/cardform.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatOptionModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatButtonModule,
     CardformComponent
   ],
   templateUrl: './roomform.component.html',
   styleUrls: ['./roomform.component.css'],
-
 })
 export class RoomformComponent implements OnInit {
 
@@ -36,7 +44,7 @@ export class RoomformComponent implements OnInit {
     created_at: new Date(),
   }
 
-  public categories: Array<string> = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
+  public categories: string[] = ["Estándar", "Doble ejecutivo", "Tripe ejecutivo"];
 
   public edit: boolean = false;
 
