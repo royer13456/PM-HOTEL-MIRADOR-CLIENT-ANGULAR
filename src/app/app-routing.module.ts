@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './pages/admin/admin.component';
-import { AdminGuard } from './pages/admin/admin.guard';
-// import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
+
 import { RoomListComponent } from './components/room-list/room-list.component';
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
 import { RoomFormComponent } from './components/room-form/room-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { ReservationComponent } from './pages/reservation/reservation.component';
+
+// GUARD
+import { AdminGuard } from './pages/auth/adminhome/admin.guard';
 
 
 const routes: Routes = [
@@ -27,7 +27,7 @@ const routes: Routes = [
     path: 'contacto', loadComponent: () => import('./pages/contactus/contactus.component').then(m => m.ContactusComponent)
   },
   {
-    path: 'admin', component: AdminComponent, canActivate: [AdminGuard], children: [
+    path: 'admin', loadComponent: () => import('./pages/auth/adminhome/adminhome.component').then(m => m.AdminhomeComponent), canActivate: [AdminGuard], children: [
       {
         path: '', component: AdminMainComponent, canActivate: [AdminGuard]
       },
@@ -49,7 +49,7 @@ const routes: Routes = [
     path: 'login', loadComponent: () => import('./pages/auth/loginadmin/loginadmin.component').then(m => m.LoginadminComponent)
   },
   {
-    path: 'reservation/:id', component: ReservationComponent
+    path: 'reservation/:id', loadComponent: () => import('./pages/reservation/reservation.component').then(m => m.ReservationComponent)
   }
 ];
 

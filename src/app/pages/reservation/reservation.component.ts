@@ -1,14 +1,34 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { RoomService } from './../../services/room.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { Reservation, Room } from 'src/app/interface';
+import { RoomService } from 'src/app/services/room.service';
 import { ActivatedRoute } from '@angular/router';
-import { Room, Reservation } from 'src/app/interface';
-import { ReserveService } from "./../../services/reserve.service";
+import { ReserveService } from 'src/app/services/reserve.service';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 const pdfMake = require('pdfmake/build/pdfmake.js');
 const pdfFonts = require('pdfmake/build/vfs_fonts.js');
 
 @Component({
   selector: 'app-reservation',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    ComponentsModule,
+    PipesModule,
+  ],
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
 })
