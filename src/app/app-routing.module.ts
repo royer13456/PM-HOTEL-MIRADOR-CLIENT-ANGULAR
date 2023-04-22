@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminGuard } from './pages/admin/admin.guard';
@@ -10,7 +9,7 @@ import { AdminMainComponent } from './components/admin-main/admin-main.component
 import { RoomFormComponent } from './components/room-form/room-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
-import { GalleryComponent } from './pages/gallery/gallery.component';
+
 
 const routes: Routes = [
   {
@@ -23,10 +22,10 @@ const routes: Routes = [
     path: 'about', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
   },
   {
-    path: 'contacto', component: ContactUsComponent
+    path: 'gallery', loadComponent: () => import('./pages/gallery/gallery.component').then(m => m.GalleryComponent)
   },
   {
-    path: 'gallery', component: GalleryComponent
+    // path: 'contacto', component: ContactUsComponent
   },
   {
     path: 'admin', component: AdminComponent, canActivate: [AdminGuard], children: [
