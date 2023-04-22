@@ -16,7 +16,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
-    
     AdminComponent,
     LoginAdminComponent,
     ReservationComponent,
@@ -33,7 +32,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatDatepickerModule,
     ReactiveFormsModule,
   ],
-  exports: [    
+  exports: [
     AdminComponent,
     LoginAdminComponent
   ]

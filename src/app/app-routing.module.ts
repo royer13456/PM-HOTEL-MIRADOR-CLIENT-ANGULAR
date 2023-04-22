@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'gallery', loadComponent: () => import('./pages/gallery/gallery.component').then(m => m.GalleryComponent)
   },
   {
-    // path: 'contacto', component: ContactUsComponent
+    path: 'contacto', loadComponent: () => import('./pages/contactus/contactus.component').then(m => m.ContactusComponent)
   },
   {
     path: 'admin', component: AdminComponent, canActivate: [AdminGuard], children: [
