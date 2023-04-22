@@ -14,7 +14,70 @@
   box-sizing: border-box;
 }
 
+/* Texto principal */
+html,
+body {
+  font-size: 1rem;
+  /* 16px en escritorio */
+}
 
+@media (max-width: 992px) {
+
+  html,
+  body {
+    font-size: 0.875rem;
+    /* 14px en tablet */
+  }
+}
+
+@media (max-width: 576px) {
+
+  html,
+  body {
+    font-size: 0.75rem;
+    /* 12px en móvil */
+  }
+}
+
+/* Subtítulos */
+h2 {
+  font-size: 1.5rem;
+  /* 24px en escritorio */
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 1.25rem;
+    /* 20px en tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.125rem;
+    /* 18px en móvil */
+  }
+}
+
+/* Títulos de secciones */
+h1 {
+  font-size: 2.25rem;
+  /* 36px en escritorio */
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 1.875rem;
+    /* 30px en tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem;
+    /* 24px en móvil */
+  }
+}
 
 .main-color {
   background-color: var(--primary);
@@ -27,11 +90,6 @@
   width: 150px;
   height: 8px;
   background-color: #9ADE9C;
-}
-
-html,
-body {
-  height: 100%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
