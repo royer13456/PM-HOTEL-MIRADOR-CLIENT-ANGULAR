@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
 import { ComponentsModule } from '../components/components.module';
 import { RoomComponent } from './room/room.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -23,7 +22,6 @@ import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
-    HomeComponent,
     RoomComponent,
     ContactUsComponent,
     AboutComponent,
@@ -42,10 +40,9 @@ import { GalleryComponent } from './gallery/gallery.component';
     MatCheckboxModule,
     MatCardModule,
     MatDatepickerModule,
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
   ],
   exports: [
-    HomeComponent,
     RoomComponent,
     ContactUsComponent,
     AboutComponent,
