@@ -1,14 +1,21 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { CardformComponent } from '../cardform/cardform.component';
 
 @Component({
-  selector: 'app-room-form',
-  templateUrl: './room-form.component.html',
-  styleUrls: ['./room-form.component.css']
+  selector: 'app-roomform',
+  standalone: true,
+  imports: [CommonModule,FormsModule,MatFormFieldModule,MatSelectModule,CardformComponent],
+  templateUrl: './roomform.component.html',
+  styleUrls: ['./roomform.component.css']
 })
-export class RoomFormComponent implements OnInit {
+export class RoomformComponent implements OnInit {
 
   public room: Room = {
     id: 0,
@@ -79,5 +86,6 @@ export class RoomFormComponent implements OnInit {
         }
       )
   }
+
 
 }

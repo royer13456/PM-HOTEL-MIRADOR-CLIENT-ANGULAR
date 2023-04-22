@@ -1,13 +1,17 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ContactMessage } from 'src/app/interface';
-import { ContactService } from './../../services/contact.service';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
-  selector: 'app-messages',
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.css']
+  selector: 'app-messageslist',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './messageslist.component.html',
+  styleUrls: ['./messageslist.component.css']
 })
-export class MessagesComponent implements OnInit {
+export class MessageslistComponent implements OnInit {
+
 
   public messages: ContactMessage[] = [];
 
@@ -23,5 +27,4 @@ export class MessagesComponent implements OnInit {
         }
       )
   }
-
 }

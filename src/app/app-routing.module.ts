@@ -1,11 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RoomListComponent } from './components/room-list/room-list.component';
-import { AdminMainComponent } from './components/admin-main/admin-main.component';
-import { RoomFormComponent } from './components/room-form/room-form.component';
-import { MessagesComponent } from './components/messages/messages.component';
-
 // GUARD
 import { AdminGuard } from './pages/auth/adminhome/admin.guard';
 
@@ -29,19 +24,19 @@ const routes: Routes = [
   {
     path: 'admin', loadComponent: () => import('./pages/auth/adminhome/adminhome.component').then(m => m.AdminhomeComponent), canActivate: [AdminGuard], children: [
       {
-        path: '', component: AdminMainComponent, canActivate: [AdminGuard]
+        path: '', loadComponent: () => import('./components/admin/main/main.component').then(m => m.MainComponent), canActivate: [AdminGuard]
       },
       {
-        path: 'list', component: RoomListComponent, canActivate: [AdminGuard]
+        path: 'list', loadComponent: () => import('./components/admin/roomslist/roomslist.component').then(m => m.RoomslistComponent), canActivate: [AdminGuard]
       },
       {
-        path: 'new', component: RoomFormComponent, canActivate: [AdminGuard]
+        path: 'new', loadComponent: () => import('./components/admin/roomform/roomform.component').then(m => m.RoomformComponent), canActivate: [AdminGuard]
       },
       {
-        path: 'messages', component: MessagesComponent, canActivate: [AdminGuard]
+        path: 'messages', loadComponent: () => import('./components/messageslist/messageslist.component').then(m => m.MessageslistComponent), canActivate: [AdminGuard]
       },
       {
-        path: 'edit/:id', component: RoomFormComponent, canActivate: [AdminGuard]
+        path: 'edit/:id', loadComponent: () => import('./components/admin/roomform/roomform.component').then(m => m.RoomformComponent), canActivate: [AdminGuard]
       },
     ]
   },

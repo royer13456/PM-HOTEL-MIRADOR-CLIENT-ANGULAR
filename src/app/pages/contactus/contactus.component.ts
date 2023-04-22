@@ -1,15 +1,16 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ComponentsModule } from 'src/app/components/components.module';
 import { ContactMessage } from 'src/app/interface';
 import { ContactService } from 'src/app/services/contact.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
+import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-contactus',
   standalone: true,
-  imports: [CommonModule, ComponentsModule,FormsModule],
+  imports: [CommonModule, FormsModule, NavbarComponent, FooterComponent],
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.css']
 })

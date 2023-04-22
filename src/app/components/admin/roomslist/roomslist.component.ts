@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
+import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+
 @Component({
-  selector: 'app-room-list',
-  templateUrl: './room-list.component.html',
-  styleUrls: ['./room-list.component.css']
+  selector: 'app-roomslist',
+  standalone: true,
+  imports: [CommonModule, RouterModule, MatCardModule,MatTabsModule],
+  templateUrl: './roomslist.component.html',
+  styleUrls: ['./roomslist.component.css']
 })
-export class RoomListComponent implements OnInit {
+export class RoomslistComponent implements OnInit {
 
   rooms: Room[] = []
 

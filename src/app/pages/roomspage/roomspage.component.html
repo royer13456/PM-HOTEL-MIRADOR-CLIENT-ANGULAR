@@ -12,7 +12,7 @@
     <section class="flex flex-col">
       <h1 class="underline">Habitaciones estándar</h1>
       <div class="grid gap-4 md:grid-cols-3" *ngIf="estandarRooms.length>0; else emptyRooms">
-        <app-room-card *ngFor="let room of estandarRooms" [room]="room"></app-room-card>
+        <app-roomcard *ngFor="let room of estandarRooms" [room]="room"></app-roomcard>
       </div>
       <ng-template #emptyRooms>
         <section class="flex justify-between">
@@ -104,14 +104,14 @@
     <section class="flex flex-col">
       <h1 class="underline">Habitaciones doble</h1>
       <div class="grid gap-4 md:grid-cols-3">
-        <app-room-card [room]="room" *ngFor="let room of dobleRooms"></app-room-card>
+        <app-roomcard [room]="room" *ngFor="let room of dobleRooms"></app-roomcard>
       </div>
     </section>
 
     <section class="flex flex-col">
       <h1 class="underline">Habitaciones triple</h1>
       <div class="grid gap-4 md:grid-cols-3">
-        <app-room-card [room]="room" *ngFor="let room of tripleRooms"></app-room-card>
+        <app-roomcard [room]="room" *ngFor="let room of tripleRooms"></app-roomcard>
       </div>
     </section>
 

@@ -2,12 +2,14 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
+import { RoomcardComponent } from 'src/app/components/client/roomcard/roomcard.component';
 
 @Component({
   selector: 'app-roomspage',
   standalone: true,
-  imports: [CommonModule,ComponentsModule],
+  imports: [CommonModule,NavbarComponent,FooterComponent,RoomcardComponent],
   templateUrl: './roomspage.component.html',
   styleUrls: ['./roomspage.component.css']
 })

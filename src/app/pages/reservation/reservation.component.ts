@@ -5,12 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ComponentsModule } from 'src/app/components/components.module';
 import { Reservation, Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
 import { ActivatedRoute } from '@angular/router';
 import { ReserveService } from 'src/app/services/reserve.service';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 
 const pdfMake = require('pdfmake/build/pdfmake.js');
 const pdfFonts = require('pdfmake/build/vfs_fonts.js');
@@ -21,12 +21,12 @@ const pdfFonts = require('pdfmake/build/vfs_fonts.js');
   imports: [
     CommonModule,
     FormsModule,
+    NavbarComponent,
     MatIconModule,
     MatCheckboxModule,
     MatCardModule,
     MatDatepickerModule,
-    ReactiveFormsModule,
-    ComponentsModule,
+    ReactiveFormsModule,    
     PipesModule,
   ],
   templateUrl: './reservation.component.html',
