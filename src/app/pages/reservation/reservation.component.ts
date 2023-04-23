@@ -1,17 +1,24 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatCardModule } from '@angular/material/card';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { Reservation, Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ActivatedRoute } from '@angular/router';
 import { ReserveService } from 'src/app/services/reserve.service';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+
+
 
 const pdfMake = require('pdfmake/build/pdfmake.js');
 const pdfFonts = require('pdfmake/build/vfs_fonts.js');
@@ -23,12 +30,15 @@ const pdfFonts = require('pdfmake/build/vfs_fonts.js');
     CommonModule,
     FormsModule,
     NavbarComponent,
-    MatIconModule,
-    MatCheckboxModule,
+    MatIconModule,    
     MatCardModule,
     MatDatepickerModule,
-    ReactiveFormsModule,    
+    ReactiveFormsModule,
     PipesModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatNativeDateModule,
   ],
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
@@ -47,14 +57,13 @@ export class ReservationComponent implements OnInit {
   }
 
   public reserveRoom: Reservation = {
-    id: 0,
+    id: '',
+    id_room: '',
     code: '',
-    from: '',
-    to: '',
-    n_rooms: 1,
+    check_in_date: '',
+    check_out_date: '',
     names: '',
     email: '',
-    phone: '',
     total: 0,
   }
 
@@ -83,47 +92,29 @@ export class ReservationComponent implements OnInit {
       })
   }
 
-  increment() {
-    if (this.reserveRoom.n_rooms >= 20) {
-      this.reserveRoom.n_rooms = 20
-    } else {
-      this.reserveRoom.n_rooms++
-    }
-  }
-
-  decrement() {
-    if (this.reserveRoom.n_rooms <= 1) {
-      this.reserveRoom.n_rooms = 1
-    } else {
-      this.reserveRoom.n_rooms--
-    }
-  }
-
   reserve() {
     delete this.reserveRoom.id;
-    if (this.reserveRoom.from &&
-      this.reserveRoom.to &&
+
+    if (this.reserveRoom.check_in_date &&
+      this.reserveRoom.check_out_date &&
       this.reserveRoom.names &&
-      this.reserveRoom.email &&
-      this.reserveRoom.phone) {
+      this.reserveRoom.email) {
+
       /***********************************************/
       this.reserveService.getReservations()
         .subscribe((res: any) => {
           this.reservesLenght = res.lenght;
         });
+
       /***********************************************/
       this.generatePDF(
         `Nº 0000${this.reservesLenght + 1}`,
         this.reserveRoom.names,
         this.room.id,
         this.room.description,
-        this.reserveRoom.n_rooms,
         this.room.price,
-        (this.room.price * this.reserveRoom.n_rooms) * 0.18,
-        (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18
       );
       /***********************************************/
-      this.reserveRoom.total = (this.room.price * this.reserveRoom.n_rooms) + (this.room.price * this.reserveRoom.n_rooms) * 0.18;;
       this.reserveRoom.code = `${this.room.id}-${this.reserveRoom.names}-${this.reserveRoom.total}`;
       this.reserveService.createReserveRequest(this.reserveRoom)
         .subscribe((res) => {
@@ -144,10 +135,10 @@ export class ReservationComponent implements OnInit {
     names: string,
     codigo: any,
     descripcion: string,
-    cantidad: number,
     valorUnitario: number,
-    igv: number,
-    importeTotal: number,
+    cantidad?: number,
+    igv?: number,
+    importeTotal?: number
   ) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
     var documentDefinition = {

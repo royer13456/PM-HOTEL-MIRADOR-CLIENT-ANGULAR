@@ -24,61 +24,30 @@
       <form (submit)="reserve()" class="flex flex-col w-8/12 gap-10 p-4 mx-auto rounded-lg shadow-lg md:w-6/12">
         <p class="text-xl font-bold text-center">SU RESERVA:</p>
 
-        <div class="flex justify-between">
-          <label for="from">
-            <span class="font-bold">Desde:</span>
-            <input class="outline-none" type="date" [min]="minDate" name="from" [(ngModel)]="reserveRoom.from" required>
-          </label>
-          <label for="to">
-            <span class="font-bold">Hasta:</span>
-            <input class="outline-none" type="date" [min]="minDate" name="to" name="to" [(ngModel)]="reserveRoom.to"
-              required>
-          </label>
-        </div>
+        <mat-form-field>
+          <input matInput type="date" name="check_in_date" [(ngModel)]="reserveRoom.check_in_date" required
+            [min]="minDate">
+          <mat-label>Check-In Date</mat-label>
+        </mat-form-field>
 
-        <label for="rooms">
-          <p>Habitaciones:</p>
-          <div class="flex items-center justify-start">
-            <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-l-lg"
-              (click)="decrement()">-</button>
-            <input type="number" class="w-16 text-center border border-gray-300 outline-none h-7"
-              [value]="reserveRoom.n_rooms" readonly name="n_rooms" [(ngModel)]="reserveRoom.n_rooms">
-            <button type="button" class="px-4 py-1 font-bold text-gray-600 bg-gray-300 rounded-r-lg"
-              (click)="increment()">+</button>
-          </div>
-        </label>
-        <section>
-          <p class="text-lg font-bold">Datos del huesped</p>
-          <label for="names">
-            <p class="font-semibold">Nombre y apellido</p>
-            <input class="w-full h-8 capitalize border border-gray-400 outline-none" type="text" name="names"
-              [(ngModel)]="reserveRoom.names" required="true">
-          </label>
-          <label for="email">
-            <p class="font-semibold">Email</p>
-            <input class="w-full h-8 border border-gray-400 outline-none" type="text" name="email"
-              [(ngModel)]="reserveRoom.email" required>
-          </label>
-          <label for="">
-            <p class="font-semibold">Celular</p>
-            <input class="w-full h-8 border border-gray-400 outline-none" type="text" name="phone"
-              [(ngModel)]="reserveRoom.phone" required>
-          </label>
-        </section>
+        <mat-form-field>
+          <input matInput type="date" name="check_out_date" [(ngModel)]="reserveRoom.check_out_date" required
+            [min]="minDate">
+          <mat-label>Check-Out Date</mat-label>
+        </mat-form-field>
 
-        <section>
-          <div class="flex justify-between">
-            <p class="text-lg font-semibold">Monto</p>
-            <div class="flex flex-col text-center">
-              <span>S/{{room.price}}</span>
-              <span>(6 horas)</span>
-            </div>
-          </div>
-        </section>
+        <mat-form-field>
+          <input matInput type="text" name="names" [(ngModel)]="reserveRoom.names" required>
+          <mat-label>Names</mat-label>
+        </mat-form-field>
 
-        <button type="submit" class="px-3 py-2 mx-auto text-white rounded-lg main-color max-w-min">
-          RESERVAR
-        </button>
+        <mat-form-field>
+          <input matInput type="email" name="email" [(ngModel)]="reserveRoom.email" required>
+          <mat-label>Email</mat-label>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Reserve</button>
+
       </form>
     </div>
   </section>

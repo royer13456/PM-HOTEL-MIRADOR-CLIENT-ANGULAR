@@ -23,7 +23,7 @@ export interface ContactMessage {
 }
 
 export interface Reservation {
-  id: string | number;
+  id?: string | number;
   id_room: string;
   code: string;
   check_in_date: string;
