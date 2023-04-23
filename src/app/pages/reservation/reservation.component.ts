@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -47,26 +48,22 @@ export class ReservationComponent implements OnInit {
 
   public reserveRoom: Reservation = {
     id: 0,
-    code: "",
-    from: "",
-    to: "",
+    code: '',
+    from: '',
+    to: '',
     n_rooms: 1,
-    names: "",
-    email: "",
-    phone: "",
+    names: '',
+    email: '',
+    phone: '',
     total: 0,
   }
 
   public minDate: string;
-
   public date: Date = new Date();
-
   public reservesLenght: number = 0;
 
   private roomService = inject(RoomService);
-
   private activatedRoute = inject(ActivatedRoute);
-
   private reserveService = inject(ReserveService);
 
   constructor() {
