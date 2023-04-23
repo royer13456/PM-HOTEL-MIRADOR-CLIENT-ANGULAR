@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { Reservation, Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
 import { ReserveService } from 'src/app/services/reserve.service';
@@ -16,6 +16,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 
 
@@ -33,7 +34,6 @@ const pdfFonts = require('pdfmake/build/vfs_fonts.js');
     MatIconModule,
     MatCardModule,
     MatDatepickerModule,
-    ReactiveFormsModule,
     PipesModule,
     MatFormFieldModule,
     MatInputModule,
@@ -112,7 +112,6 @@ export class ReservationComponent implements OnInit {
       return start <= time && time <= end;
     });
   }
-
 
   getRoom() {
     const { id } = this.activatedRoute.snapshot.params
