@@ -40,8 +40,10 @@
 
 
         <mat-form-field>
-          <input matInput type="date" name="check_out_date" [(ngModel)]="reserveRoom.check_out_date" required
-            [min]="minDate">
+          <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_out_date"
+            name="check_in_date" required [matDatepicker]="checkOutPicker">
+          <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkOutPicker></mat-datepicker>
           <mat-label>Check-Out Date</mat-label>
         </mat-form-field>
 
