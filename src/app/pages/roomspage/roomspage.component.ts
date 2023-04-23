@@ -10,12 +10,11 @@ import { CardskeletonComponent } from 'src/app/shared/cardskeleton/cardskeleton.
 @Component({
   selector: 'app-roomspage',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, FooterComponent, RoomcardComponent,CardskeletonComponent],
+  imports: [CommonModule, NavbarComponent, FooterComponent, RoomcardComponent, CardskeletonComponent],
   templateUrl: './roomspage.component.html',
   styleUrls: ['./roomspage.component.css']
 })
 export class RoomspageComponent implements OnInit {
-
 
   public roomList: Room[] = [];
 
