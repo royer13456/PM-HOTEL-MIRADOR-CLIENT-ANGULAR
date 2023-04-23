@@ -24,12 +24,6 @@
       <form (submit)="reserve()" class="flex flex-col w-8/12 gap-10 p-4 mx-auto rounded-lg shadow-lg md:w-6/12">
         <p class="text-xl font-bold text-center">SU RESERVA:</p>
 
-        <!-- <mat-form-field>
-          <input matInput type="date" name="check_in_date" [(ngModel)]="reserveRoom.check_in_date" required
-            [min]="minDate">
-          <mat-label>Check-In Date</mat-label>
-        </mat-form-field> -->
-
         <mat-form-field>
           <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_in_date"
             name="check_in_date" required [matDatepicker]="checkInPicker">
@@ -37,7 +31,6 @@
           <mat-datepicker #checkInPicker></mat-datepicker>
           <mat-label>Check-In Date</mat-label>
         </mat-form-field>
-
 
         <mat-form-field>
           <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_out_date"
