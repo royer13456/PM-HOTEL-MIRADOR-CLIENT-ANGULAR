@@ -17,4 +17,8 @@ export class ReserveService {
   createReserveRequest(reservation: Reservation) {
     return this.http.post<Reservation>('http://localhost:3000/api/reserve', reservation);
   }
+
+  gerReservedDatesRequest(){
+    return this.http.get('http://localhost:3000/api/reserved');
+  }
 }

@@ -30,7 +30,7 @@ const pdfFonts = require('pdfmake/build/vfs_fonts.js');
     CommonModule,
     FormsModule,
     NavbarComponent,
-    MatIconModule,    
+    MatIconModule,
     MatCardModule,
     MatDatepickerModule,
     ReactiveFormsModule,
@@ -67,22 +67,52 @@ export class ReservationComponent implements OnInit {
     total: 0,
   }
 
-  public minDate: string;
+  public minDate: Date = new Date;
   public date: Date = new Date();
   public reservesLenght: number = 0;
+  public reservedDates: Date[] = [];
 
   private roomService = inject(RoomService);
   private activatedRoute = inject(ActivatedRoute);
   private reserveService = inject(ReserveService);
 
   constructor() {
-    const currentDate = new Date();
-    this.minDate = currentDate.toISOString().split('T')[0];
   }
 
   ngOnInit(): void {
+    const currentDate = new Date();
+    this.minDate = currentDate;
     this.getRoom();
+    this.getReservedDates();
   }
+
+  getReservedDates() {
+    this.reserveService.gerReservedDatesRequest().subscribe(
+      (data: any) => {
+        this.reservedDates = data.map((reservedDate: any) => {
+          const startDate = new Date(reservedDate.check_in_date);
+          const endDate = new Date(reservedDate.check_out_date);
+          // Set the time to midnight to only compare dates
+          startDate.setHours(0, 0, 0, 0);
+          endDate.setHours(0, 0, 0, 0);
+          return { start: startDate, end: endDate };
+        });
+      }
+    );
+  }
+
+  dateFilter = (date: Date | null): boolean => {
+    if (!date) {
+      return false;
+    }
+    const time = date.getTime();
+    return !this.reservedDates.some((reservedDate: any) => {
+      const start = reservedDate.start.getTime();
+      const end = reservedDate.end.getTime();
+      return start <= time && time <= end;
+    });
+  }
+
 
   getRoom() {
     const { id } = this.activatedRoute.snapshot.params
