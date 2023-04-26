@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Room } from '../models/Room.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomService {
 
-  API_URL = "http://localhost:3000/api/room"
-
+  private API_URL = "http://localhost:3000/api/room"
+  
   constructor(private http: HttpClient) { }
 
   getRoomsRequest() {

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RoomService } from 'src/app/services/room.service';
 import { FormsModule } from '@angular/forms';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ReserveService } from 'src/app/services/reserve.service';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 
@@ -20,8 +20,6 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { Room } from 'src/app/models/Room.model';
 import { Reservation } from 'src/app/models/Reservation.model';
 import { PDF } from 'src/app/models/PDF.model';
-
-
 
 const pdfMake = require('pdfmake/build/pdfmake.js');
 const pdfFonts = require('pdfmake/build/vfs_fonts.js');
@@ -71,16 +69,17 @@ export class ReservationComponent implements OnInit {
 
   public minDate: Date = new Date;
   public date: Date = new Date();
-  public reservesLenght: number = 0;
+  public reservesLength: number = 0;
   public reservedDates: Date[] = [];
   public pdf: PDF = { codeSalesNote: '', names: '', reserveCode: '', description: '', unitValue: 0, igv: 0, total: 0 };
 
   private roomService = inject(RoomService);
   private activatedRoute = inject(ActivatedRoute);
   private reserveService = inject(ReserveService);
+  private router = inject(Router);
 
-  constructor() {
-  }
+
+  constructor() { }
 
   ngOnInit(): void {
     const currentDate = new Date();
@@ -126,19 +125,21 @@ export class ReservationComponent implements OnInit {
 
   reserve() {
     delete this.reserveRoom.id;
-
-    if (this.reserveRoom.check_in_date &&
+    if (!this.room.title) { this.router.navigate(['/']) }
+    if (
+      this.reserveRoom.check_in_date &&
       this.reserveRoom.check_out_date &&
       this.reserveRoom.names &&
-      this.reserveRoom.email) {
+      this.reserveRoom.email
+    ) {
 
       this.reserveService.getReservations()
         .subscribe((res: any) => {
-          this.reservesLenght = res.lenght;
+          this.reservesLength = res.length;
         });
 
       this.pdf = {
-        codeSalesNote: `Nº 0000${this.reservesLenght + 1}`,
+        codeSalesNote: `Nº 0000${this.reservesLength + 1}`,
         names: this.reserveRoom.names,
         reserveCode: `R-${this.room.id}`,
         description: this.room.description,
@@ -159,9 +160,9 @@ export class ReservationComponent implements OnInit {
 
       setTimeout(() => {
         window.location.reload();
-      }, 1500);
+      }, 5000);
     } else {
-      alert("Completar todos los campos");
+      alert('Completa todos los campos')
     }
   }
 
