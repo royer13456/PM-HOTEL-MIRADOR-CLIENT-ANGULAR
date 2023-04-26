@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
-import { Admin } from 'src/app/interface';
+import { Admin } from 'src/app/models/Admin.model';
 
 @Component({
   selector: 'app-loginadmin',

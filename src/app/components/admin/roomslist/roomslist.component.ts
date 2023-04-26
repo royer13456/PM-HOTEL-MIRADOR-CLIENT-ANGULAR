@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Room } from 'src/app/interface';
+
 import { RoomService } from 'src/app/services/room.service';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { Room } from 'src/app/models/Room.model';
 
 @Component({
   selector: 'app-roomslist',

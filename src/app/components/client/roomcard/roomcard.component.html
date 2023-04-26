@@ -5,7 +5,7 @@
   <img class="object-cover w-full rounded-t-lg max-h-40" [src]="room.image_url" [alt]="room.title" loading="lazy" />
 
   <div class="p-3">
-    <h1 class="mb-2 text-lg font-bold tracking-tight text-gray-900 capitalize">{{room.title}}</h1>
+    <h1 class="mb-2 text-lg font-bold tracking-tight text-gray-900 capitalize truncate">{{room.title}}</h1>
     <ul class="px-5 list-disc">
       <li class="mb-1 font-normal text-gray-700 capitalize truncate" *ngFor="let d of room.description | description">
         {{d}}

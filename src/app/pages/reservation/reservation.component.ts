@@ -1,7 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Reservation, Room } from 'src/app/interface';
 import { RoomService } from 'src/app/services/room.service';
 import { FormsModule } from '@angular/forms';
 
@@ -18,6 +17,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { Room } from 'src/app/models/Room.model';
+import { Reservation } from 'src/app/models/Reservation.model';
+import { PDF } from 'src/app/models/PDF.model';
 
 
 
@@ -71,6 +73,7 @@ export class ReservationComponent implements OnInit {
   public date: Date = new Date();
   public reservesLenght: number = 0;
   public reservedDates: Date[] = [];
+  public pdf: PDF = { codeSalesNote: '', names: '', reserveCode: '', description: '', unitValue: 0, igv: 0, total: 0 };
 
   private roomService = inject(RoomService);
   private activatedRoute = inject(ActivatedRoute);
@@ -129,50 +132,43 @@ export class ReservationComponent implements OnInit {
       this.reserveRoom.names &&
       this.reserveRoom.email) {
 
-      /***********************************************/
       this.reserveService.getReservations()
         .subscribe((res: any) => {
           this.reservesLenght = res.lenght;
         });
 
-      /***********************************************/
+      this.pdf = {
+        codeSalesNote: `Nº 0000${this.reservesLenght + 1}`,
+        names: this.reserveRoom.names,
+        reserveCode: `R-${this.room.id}`,
+        description: this.room.description,
+        unitValue: this.room.price,
+        igv: this.room.price * 0.18,
+        total: (Number(this.room.price)) + (this.room.price * 0.18),
+      }
+
       this.generatePDF(
-        `Nº 0000${this.reservesLenght + 1}`,
-        this.reserveRoom.names,
-        this.room.id,
-        this.room.description,
-        this.room.price,
+        this.pdf
       );
-      /***********************************************/
+
       this.reserveRoom.code = `${this.room.id}-${this.reserveRoom.names}-${this.reserveRoom.total}`;
-      this.reserveService.createReserveRequest(this.reserveRoom)
-        .subscribe((res) => {
-          console.table(this.reserveRoom)
-        })
-      /***********************************************/
+      // this.reserveService.createReserveRequest(this.reserveRoom)
+      //   .subscribe((res) => {
+      //     console.table(this.reserveRoom)
+      // });
+
       setTimeout(() => {
         window.location.reload();
       }, 1500);
-      /***********************************************/
     } else {
       alert("Completar todos los campos");
     }
   }
 
-  generatePDF(
-    codigoFactura: any,
-    names: string,
-    codigo: any,
-    descripcion: string,
-    valorUnitario: number,
-    cantidad?: number,
-    igv?: number,
-    importeTotal?: number
-  ) {
+  generatePDF(pdf: PDF) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
-    var documentDefinition = {
+    let documentDefinition = {
       content: [
-
         {
           columns: [
             {
@@ -183,7 +179,7 @@ export class ReservationComponent implements OnInit {
             },
             {
               width: "*",
-              text: `NOTA DE VENTA ELECTRÓNICA\n${codigoFactura}`,
+              text: `NOTA DE VENTA ELECTRÓNICA\n${pdf.codeSalesNote}`,
               fontSize: 20,
               bold: true,
               alignment: "right"
@@ -213,17 +209,13 @@ export class ReservationComponent implements OnInit {
                 { text: `${this.date.toLocaleDateString()}` }
               ],
               [
-                { text: "Tipo y número de documento del cliente:", bold: true },
+                { text: "DNI", bold: true },
                 { text: "" }
               ],
               [
-                { text: "Nombre o razón social del cliente:", bold: true },
-                { text: `${names}` }
+                { text: "Nombre del cliente:", bold: true },
+                { text: `${pdf.names}` }
               ],
-              [
-                { text: "Dirección del cliente:", bold: true },
-                { text: "" }
-              ]
             ]
           }
         },
@@ -232,23 +224,19 @@ export class ReservationComponent implements OnInit {
           margin: [0, 10],
           table: {
             headerRows: 1,
-            widths: ["auto", "*", "auto", "auto"],
+            widths: ["auto", "*", "auto"],
             body: [
               [
                 { text: "Código", bold: true, alignment: "center" },
                 { text: "Descripción", bold: true, alignment: "center" },
-                { text: "Cantidad", bold: true, alignment: "center" },
                 { text: "Valor unitario", bold: true, alignment: "center" },
               ],
               // repeat this row for each item
               [
-                `${codigo}`,
-                `${descripcion}`,
+                `${pdf.reserveCode}`,
+                `${pdf.description}`,
                 {
-                  text: `${cantidad}`, alignement: "center"
-                },
-                {
-                  text: `${valorUnitario}`, alignement: "center"
+                  text: `${pdf.unitValue}`, alignement: "center"
                 },
               ]
             ]
@@ -267,11 +255,11 @@ export class ReservationComponent implements OnInit {
               ],
               [
                 { text: "IGV (18%)", bold: true },
-                { text: `${igv}` }
+                { text: `${pdf.igv.toFixed(2)}` }
               ],
               [
                 { text: "Importe total", bold: true },
-                { text: `S/${importeTotal}` }
+                { text: `S/${pdf.total.toFixed(2)}` }
               ]
             ]
           }

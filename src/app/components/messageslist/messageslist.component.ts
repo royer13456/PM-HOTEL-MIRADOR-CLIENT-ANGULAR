@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactMessage } from 'src/app/interface';
+
 import { ContactService } from 'src/app/services/contact.service';
+import { ContactMessage } from 'src/app/models/ContactMessage.model';
 
 @Component({
   selector: 'app-messageslist',

@@ -1,58 +1,122 @@
-<main class="relative flex flex-col min-h-screen">
-  <div class="bg-[url('/assets/homepage-main2.webp')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
-    <div class="bg-[rgba(35,35,35,0.74)] h-[400px] md:h-[450px]">
-      <app-navbar></app-navbar>
-      <div class="flex flex-col items-center mt-10">
-        <!-- py-[110px] -->
-        <h1 class="font-bold text-2xl text-center text-[rgb(239,239,239)] sm:text-3xl">RESERVA</h1>
-      </div>
+<main class="relative flex flex-col min-h-screen bg-[#e2e2e26e]">
+  <div class="bg-[#1e1f21]">
+    <div class="text-[rgb(239,239,239)]">
+      <section class="flex flex-row justify-between border-b border-[#f8f8f8] sm:px-10 px-2">
+        <div class="flex flex-row items-center gap-5 py-2">
+          <img src="/assets/logo.webp" class="w-12 rounded-md md:w-12" alt="logo">
+          <p class="hidden p-bottom sm:inline">H. TORRE TORRE</p>
+        </div>
+        <div class="text-right border-l py-2 sm:pl-10 pl-2 border-[#f8f8f8]">
+          <P>Call Now</P>
+          <p class="p-bottom">(855)504-8213</p>
+        </div>
+      </section>
+
+      <section class="max-w-[1110px] lg:mx-auto py-10 px-2 my-auto lg:px-20 xl:px-0">
+        <div class="flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start sm:gap-10">
+          <img class="rounded-lg w-44 md:w-64" [src]="room.image_url" [alt]="room.title">
+          <div>
+            <p class="pb-3 text-xl font-semibold sm:text-2xl">{{room.title}}</p>
+            <ul>
+              <li *ngFor="let d of room.description | description" class="truncate ">
+                - {{d}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
+
   <!-- <div class="absolute top-0 h-[20rem] w-full -z-10 bg-[#000]"></div> -->
-  <section class="container flex-1 mx-auto mt-20">
-    <div class="grid gap-5 md:grid-cols-2">
-      <mat-card class="w-8/12 mx-auto md:w-7/12 h-min">
-        <img class="mx-auto" [src]="room.image_url" [alt]="room.title">
-        <p class="p-3 text-2xl text-center capitalize">{{room.title}}</p>
-        <ul>
-          <li *ngFor="let d of room.description | description" class="text-lg truncate ">
-            - {{d}}
-          </li>
-        </ul>
-      </mat-card>
+  <div class="max-w-[1110px] lg:mx-auto container flex flex-col lg:flex-row justify-between gap-10 my-10 sm:my-20">
+    <div>
+      <form (submit)="reserve()"
+        class="flex flex-col w-11/12 gap-10 py-10 px-5 sm:px-20 mx-auto bg-[#ffffff] border border-[#489C5A] md:w-[650px] lg:w-[750px]">
+        <p class="text-xl font-bold text-center p-bottom sm:text-3xl">CONFIRMA TU RESERVA</p>
 
-      <form (submit)="reserve()" class="flex flex-col w-8/12 gap-10 p-4 mx-auto rounded-lg shadow-lg md:w-6/12">
-        <p class="text-xl font-bold text-center">SU RESERVA:</p>
+        <div class="flex flex-col justify-between gap-5 sm:flex-row">
+          <label for="from">
+            <span class="font-bold">From:</span><br>
+            <input class="border border-[#afafaf] hover:border-[#2a2a2a] mt-4 sm:px-5 py-1" type="date" [min]="minDate"
+              name="from" [(ngModel)]="reserveRoom.check_in_date" required>
+          </label>
+          <label for="to">
+            <span class="font-bold">Hasta:</span><br>
+            <input class="border border-[#afafaf] hover:border-[#2a2a2a] mt-4 sm:px-5 py-1" type="date" [min]="minDate"
+              name="to" name="to" [(ngModel)]="reserveRoom.check_out_date" required>
+          </label>
+        </div>
 
-        <mat-form-field>
-          <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_in_date"
-            name="check_in_date" required [matDatepicker]="checkInPicker">
-          <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
-          <mat-datepicker #checkInPicker></mat-datepicker>
-          <mat-label>Check-In Date</mat-label>
-        </mat-form-field>
+        <section>
+          <p class="pb-5 text-lg font-bold">Datos del huesped</p>
+          <label for="names">
+            <p class="font-semibold">Nombre y apellido</p>
+            <input
+              class="w-full h-8 px-1 py-3 sm:px-3 sm:py-5 border border-[#afafaf] hover:border-[#2a2a2a] outline-none"
+              type="text" name="names" [(ngModel)]="reserveRoom.names" required="true">
+          </label>
+          <label for="email">
+            <p class="pt-5 font-semibold">Email</p>
+            <input
+              class="w-full h-8 px-1 py-3 sm:px-3 sm:py-5 border border-[#afafaf] hover:border-[#2a2a2a] outline-none"
+              type="text" name="email" [(ngModel)]="reserveRoom.email" required>
+          </label>
+        </section>
 
-        <mat-form-field>
-          <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_out_date"
-            name="check_in_date" required [matDatepicker]="checkOutPicker">
-          <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
-          <mat-datepicker #checkOutPicker></mat-datepicker>
-          <mat-label>Check-Out Date</mat-label>
-        </mat-form-field>
+        <section>
+          <div class="flex justify-between">
+            <p class="text-lg font-semibold">Monto</p>
+            <div class="flex flex-col text-center">
+              <span>S/{{room.price}}</span>
+              <span>(Por noche)</span>
+            </div>
+          </div>
+        </section>
 
-        <mat-form-field>
-          <input matInput type="text" name="names" [(ngModel)]="reserveRoom.names" required>
-          <mat-label>Names</mat-label>
-        </mat-form-field>
-
-        <mat-form-field>
-          <input matInput type="email" name="email" [(ngModel)]="reserveRoom.email" required>
-          <mat-label>Email</mat-label>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" type="submit">Reserve</button>
-
+        <button type="submit" class="px-10 py-2 mx-auto text-white rounded main-color max-w-min">
+          RESERVAR
+        </button>
       </form>
     </div>
-  </section>
+
+    <div class="max-w-[300px] flex flex-col gap-20 mx-auto">
+      <section class="rounded bg-[rgba(148,201,140,0.36)] px-5 sm:px-10 py-5">
+        <p class="text-sm
+         text-center font-semibold pb-5 border-b border-[#424242]">RESUMEN DE SU RESERVA</p>
+        <div class="border-b border-[#424242] text-xs">
+          <div class="div-flex">
+            <p>Ingreso:</p>
+            <p>{{reserveRoom.check_in_date?reserveRoom.check_in_date:'DD-MM-YY'}}</p>
+          </div>
+          <div class="div-flex">
+            <p>Salida:</p>
+            <p>{{reserveRoom.check_out_date?reserveRoom.check_out_date:'DD-MM-YY'}}</p>
+          </div>
+          <div class="div-flex">
+            <p>Tarifa media por<br> Noche:</p>
+            <p>S/ {{room.price}}</p>
+          </div>
+        </div>
+        <div class="mt-4 text-xs div-flex mb-7">
+          <p>Cargos Totales:</p>
+          <p>{{ room.price }}</p>
+        </div>
+        <p class="text-xs text-justify">Se le cobrará: $ 121.44 (incluidos impuestos y tarifas) que no es reembolsable.
+        </p>
+        <p class="text-xs text-justify">Esta tarifa no es reembolsable y no se puede cambiar ni cancelar; si elige
+          cambiar o cancelar esta reserva, no se le reembolsará nada del pago.</p>
+      </section>
+
+      <section class="rounded bg-[rgba(148,201,140,0.36)] px-5 sm:px-10 py-5">
+        <p class="text-center">¿Necesitas ayuda?</p>
+        <div class="flex items-center justify-center gap-5">
+          <img src="/assets/logo-telefono-movil.webp" class="w-10" alt="tel icon">
+          <p class="p-bottom">(855) 506-8364</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
 </main>

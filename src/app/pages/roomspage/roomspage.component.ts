@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Room } from 'src/app/interface';
+import { Room } from 'src/app/models/Room.model';
 import { RoomService } from 'src/app/services/room.service';
 
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';

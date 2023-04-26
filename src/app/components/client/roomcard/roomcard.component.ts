@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Room } from 'src/app/interface';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { RouterModule } from '@angular/router';
+import { Room } from 'src/app/models/Room.model';
 
 @Component({
   selector: 'app-roomcard',

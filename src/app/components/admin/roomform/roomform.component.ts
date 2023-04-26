@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Room } from 'src/app/interface';
+
 import { RoomService } from 'src/app/services/room.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { Room } from 'src/app/models/Room.model';
 
 @Component({
   selector: 'app-roomform',

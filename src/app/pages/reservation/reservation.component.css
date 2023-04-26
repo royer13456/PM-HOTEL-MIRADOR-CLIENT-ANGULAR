@@ -1,0 +1,9 @@
+.p-bottom {
+  margin-bottom: 0;
+}
+
+.div-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
