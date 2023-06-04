@@ -27,6 +27,9 @@ const routes: Routes = [
         path: '', loadComponent: () => import('./components/admin/main/main.component').then(m => m.MainComponent), canActivate: [AdminGuard]
       },
       {
+        path: 'reservesList', loadComponent: () => import('./components/admin/reserves-list/reserves-list.component').then(m => m.ReservesListComponent), canActivate: [AdminGuard]
+      },
+      {
         path: 'list', loadComponent: () => import('./components/admin/roomslist/roomslist.component').then(m => m.RoomslistComponent), canActivate: [AdminGuard]
       },
       {

@@ -36,25 +36,36 @@
         <p class="text-xl font-bold text-center p-bottom sm:text-3xl">CONFIRMA TU RESERVA</p>
 
         <div class="flex flex-col justify-between gap-5 sm:flex-row">
-          <label for="from">
-            <span class="font-bold">From:</span><br>
-            <input class="border border-[#afafaf] hover:border-[#2a2a2a] mt-4 sm:px-5 py-1" type="date"
-              [min]="getReservedDates()" name="check_in_date" [(ngModel)]="reserveRoom.check_in_date" required>
-          </label>
-          <label for="to">
-            <span class="font-bold">Hasta:</span><br>
-            <input class="border border-[#afafaf] hover:border-[#2a2a2a] mt-4 sm:px-5 py-1" type="date"
-              [min]="getReservedDates()" name="check_out_date" [(ngModel)]="reserveRoom.check_out_date" required>
-          </label>
+          <mat-form-field>
+            <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_in_date"
+              name="check_in_date" required [matDatepicker]="checkInPicker">
+            <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+            <mat-datepicker #checkInPicker></mat-datepicker>
+            <mat-label>Fecha de entrada</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [matDatepickerFilter]="dateFilter" [min]="minDate" [(ngModel)]="reserveRoom.check_out_date"
+              name="check_in_date" required [matDatepicker]="checkOutPicker">
+            <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+            <mat-datepicker #checkOutPicker></mat-datepicker>
+            <mat-label>Fecha de salida</mat-label>
+          </mat-form-field>
         </div>
 
         <section>
           <p class="pb-5 text-lg font-bold">Datos del huesped</p>
           <label for="names">
+            <p class="font-semibold">DNI</p>
+            <input
+              class="w-full h-8 px-1 py-3 sm:px-3 sm:py-5 border border-[#afafaf] hover:border-[#2a2a2a] outline-none"
+              type="text" name="dni" [(ngModel)]="dni" required="true" (change)="getUser(dni)" maxlength="8">
+          </label>
+          <label for="dni">
             <p class="font-semibold">Nombre y apellido</p>
             <input
               class="w-full h-8 px-1 py-3 sm:px-3 sm:py-5 border border-[#afafaf] hover:border-[#2a2a2a] outline-none"
-              type="text" name="names" [(ngModel)]="reserveRoom.names" required="true">
+              type="text" name="names" [(ngModel)]="reserveRoom.names" required="true" readonly>
           </label>
           <label for="email">
             <p class="pt-5 font-semibold">Email</p>
@@ -87,11 +98,11 @@
         <div class="border-b border-[#424242] text-xs">
           <div class="div-flex">
             <p>Ingreso:</p>
-            <p>{{reserveRoom.check_in_date?reserveRoom.check_in_date:'DD-MM-YY'}}</p>
+            <p>{{reserveRoom.check_in_date?(reserveRoom.check_in_date|date):'DD-MM-YY'}}</p>
           </div>
           <div class="div-flex">
             <p>Salida:</p>
-            <p>{{reserveRoom.check_out_date?reserveRoom.check_out_date:'DD-MM-YY'}}</p>
+            <p>{{reserveRoom.check_out_date?(reserveRoom.check_out_date|date):'DD-MM-YY'}}</p>
           </div>
           <div class="div-flex">
             <p>Tarifa media por<br> Noche:</p>

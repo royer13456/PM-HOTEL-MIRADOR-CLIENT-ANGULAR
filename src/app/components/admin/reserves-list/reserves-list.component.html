@@ -1,0 +1,23 @@
+<h1 class="pt-5 text-2xl text-center underline">Reservas</h1>
+<table class="m-auto mt-3 border border-zinc-700">
+  <tr>
+    <th class="p-2 border border-zinc-700">Id</th>
+    <th class="p-2 border border-zinc-700">Id habitación</th>
+    <th class="p-2 border border-zinc-700">Código</th>
+    <th class="p-2 border border-zinc-700">Fecha ingreso</th>
+    <th class="p-2 border border-zinc-700">Fecha salida</th>
+    <th class="p-2 border border-zinc-700">Nombres</th>
+    <th class="p-2 border border-zinc-700">Email</th>
+    <th class="p-2 border border-zinc-700">Total</th>
+  </tr>
+  <tr *ngFor="let reserve of reservesList">
+    <td class="p-2 border border-zinc-700"> {{ reserve.id }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.id_room }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.code }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.check_in_date | date }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.check_out_date | date }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.names }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.email }} </td>
+    <td class="p-2 border border-zinc-700"> {{ reserve.total }} </td>
+  </tr>
+</table>

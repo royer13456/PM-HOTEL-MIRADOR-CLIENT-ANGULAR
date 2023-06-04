@@ -45,6 +45,8 @@ const pdfFonts = require('pdfmake/build/vfs_fonts.js');
 })
 export class ReservationComponent implements OnInit {
 
+  dni: string = '';
+
   public room: Room = {
     id: 0,
     image_url: '',
@@ -88,6 +90,16 @@ export class ReservationComponent implements OnInit {
     this.getReservedDates();
   }
 
+  getUser(dni: string) {
+    this.reserveService.getUser(dni)
+      .subscribe(
+        (data: any) => {
+          // this.reserveRoom.names = data.apellidoPaterno + ' ' + data.apellidoMaterno + ' ' +data.nombres
+          this.reserveRoom.names = `${data.apellidoPaterno} ${data.apellidoMaterno} ${data.nombres}`
+        }
+      );
+  }
+
   getReservedDates() {
     this.reserveService.gerReservedDatesRequest().subscribe(
       (data: any) => {
@@ -124,6 +136,7 @@ export class ReservationComponent implements OnInit {
   }
 
   reserve() {
+    // this.getUser()
     delete this.reserveRoom.id;
     if (!this.room.title) { this.router.navigate(['/']) }
     if (
@@ -211,7 +224,7 @@ export class ReservationComponent implements OnInit {
               ],
               [
                 { text: "DNI", bold: true },
-                { text: "" }
+                { text: this.dni }
               ],
               [
                 { text: "Nombre del cliente:", bold: true },
