@@ -175,9 +175,9 @@ export class ReservationComponent implements OnInit {
       this.reserveService.createReserveRequest(this.reserveRoom)
         .subscribe(console.log)
 
-      // setTimeout(() => {
-      //   window.location.reload();
-      // }, 5000);
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
     } else {
       alert('Completa todos los campos')
     }
