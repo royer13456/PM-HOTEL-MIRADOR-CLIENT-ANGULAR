@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 
 import { RoomService } from 'src/app/services/room.service';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { Room } from 'src/app/models/Room.model';
 import { Reservation } from 'src/app/models/Reservation.model';
+
+
 import { PDF } from 'src/app/models/PDF.model';
 
 const pdfMake = require('pdfmake/build/pdfmake.js');
@@ -88,13 +90,14 @@ export class ReservationComponent implements OnInit {
     this.minDate = currentDate;
     this.getRoom();
     this.getReservedDates();
+    this.reserveService.getReservations()
+      .subscribe(res => this.reservesLength = res.length);
   }
 
   getUser(dni: string) {
     this.reserveService.getUser(dni)
       .subscribe(
         (data: any) => {
-          // this.reserveRoom.names = data.apellidoPaterno + ' ' + data.apellidoMaterno + ' ' +data.nombres
           this.reserveRoom.names = `${data.apellidoPaterno} ${data.apellidoMaterno} ${data.nombres}`
         }
       );
@@ -106,7 +109,6 @@ export class ReservationComponent implements OnInit {
         this.reservedDates = data.map((reservedDate: any) => {
           const startDate = new Date(reservedDate.check_in_date);
           const endDate = new Date(reservedDate.check_out_date);
-          // Set the time to midnight to only compare dates
           startDate.setHours(0, 0, 0, 0);
           endDate.setHours(0, 0, 0, 0);
           return { start: startDate, end: endDate };
@@ -136,7 +138,14 @@ export class ReservationComponent implements OnInit {
   }
 
   reserve() {
-    // this.getUser()
+
+    const formatedCheckIn = new Date(this.reserveRoom.check_in_date).toISOString().split('T')[0]
+    const formatedCheckOut = new Date(this.reserveRoom.check_out_date).toISOString().split('T')[0]
+    this.reserveRoom.check_in_date = formatedCheckIn;
+    this.reserveRoom.check_out_date = formatedCheckOut;
+    this.reserveRoom.id_room = this.room.id!;
+
+
     delete this.reserveRoom.id;
     if (!this.room.title) { this.router.navigate(['/']) }
     if (
@@ -146,10 +155,6 @@ export class ReservationComponent implements OnInit {
       this.reserveRoom.email
     ) {
 
-      this.reserveService.getReservations()
-        .subscribe((res: any) => {
-          this.reservesLength = res.length;
-        });
 
       this.pdf = {
         codeSalesNote: `Nº 0000${this.reservesLength + 1}`,
@@ -166,14 +171,13 @@ export class ReservationComponent implements OnInit {
       );
 
       this.reserveRoom.code = `${this.room.id}-${this.reserveRoom.names}-${this.reserveRoom.total}`;
-      // this.reserveService.createReserveRequest(this.reserveRoom)
-      //   .subscribe((res) => {
-      //     console.table(this.reserveRoom)
-      // });
+      this.reserveRoom.total = this.room.price
+      this.reserveService.createReserveRequest(this.reserveRoom)
+        .subscribe(console.log)
 
-      setTimeout(() => {
-        window.location.reload();
-      }, 5000);
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 5000);
     } else {
       alert('Completa todos los campos')
     }

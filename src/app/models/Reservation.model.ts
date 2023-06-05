@@ -1,6 +1,6 @@
 export interface Reservation {
   id?: string | number;
-  id_room: string;
+  id_room: string | number;
   code: string;
   check_in_date: string;
   check_out_date: string;

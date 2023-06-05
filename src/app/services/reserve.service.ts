@@ -7,6 +7,8 @@ import { Reservation } from '../models/Reservation.model';
 })
 export class ReserveService {
 
+  // API_URL = 'http://localhost:3000/api/reserve';
+  // API_URL2 = 'http://localhost:3000/api/reserved';
   API_URL = 'https://pm-hotel-mirador-server-production.up.railway.app/api/reserve'
   API_URL2 = 'https://pm-hotel-mirador-server-production.up.railway.app/api/reserved'
 
