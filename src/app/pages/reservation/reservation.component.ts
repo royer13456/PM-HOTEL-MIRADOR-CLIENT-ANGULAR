@@ -177,9 +177,9 @@ export class ReservationComponent implements OnInit {
 
       setTimeout(() => {
         window.location.reload();
-      }, 5000);
+      }, 2500);
     } else {
-      alert('Completa todos los campos')
+      alert('Completa todos los campos')  
     }
   }
 
