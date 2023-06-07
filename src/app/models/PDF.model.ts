@@ -8,10 +8,3 @@ export interface PDF {
   igv: number;
   total: number
 }
-
-
-
-
-// (response: any) => {
-//   this.room = response[0]
-// }
