@@ -179,7 +179,7 @@ export class ReservationComponent implements OnInit {
         window.location.reload();
       }, 2500);
     } else {
-      alert('Completa todos los campos')  
+      alert('Completa todos los campos')
     }
   }
 
@@ -290,6 +290,14 @@ export class ReservationComponent implements OnInit {
 
     pdfMake.createPdf(documentDefinition).open();
     pdfMake.createPdf(documentDefinition).download('factura.pdf');
+  }
+
+  onInputChange(): void {
+    const maxLength = 8;
+    const inputValueAsString = this.dni.toString();
+    if (inputValueAsString.length > maxLength) {
+      this.dni = inputValueAsString.slice(0, maxLength);
+    }
   }
 
 }
