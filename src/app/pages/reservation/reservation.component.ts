@@ -179,7 +179,7 @@ export class ReservationComponent implements OnInit {
         window.location.reload();
       }, 2500);
     } else {
-      alert('Completa todos los campos')  
+      alert('Completa todos los campos')
     }
   }
 
