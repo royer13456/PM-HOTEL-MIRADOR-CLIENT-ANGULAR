@@ -1,31 +1,51 @@
 <div class="min-h-screen ">
-  <div class="bg-[url('/assets/homepage-main2.webp')] bg-cover bg-center bg-local h-[300px] md:h-[350px]">
+  <div
+    class="bg-[url('https://static.wixstatic.com/media/51939cee9c2a44d09f68f8567a3a5945.jpg/v1/fill/w_1347,h_560,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/51939cee9c2a44d09f68f8567a3a5945.jpg')] bg-cover bg-center bg-local h-[300px] md:h-[350px]">
     <div class="bg-[rgba(35,35,35,0.74)] h-[300px] md:h-[350px]">
       <app-navbar></app-navbar>
-      <div class="flex flex-col items-center mt-10">
-        <h1 class="font-bold text-2xl sm:text-3xl text-center text-[rgb(239,239,239)] ">CONTÁCTANOS</h1>
-      </div>
+
     </div>
   </div>
 
-  <div class="flex flex-col items-center flex-1 my-20">
-    <form (submit)="createMessage()" class="flex flex-col gap-4 p-5  sm:w-[400px] w-[250px]" action="">
-      <label for="">Nombres y Apellidos</label>
-      <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.names"
-        name="names">
-      <label for="">Email</label>
-      <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.correo"
-        name="correo">
-      <label for="">Telefono</label>
-      <input class="px-3 py-2 border-b-2 border-solid border-slate-800" type="text" [(ngModel)]="message.celular"
-        name="celular">
-      <label for="">Mensaje</label>
-      <textarea class="px-3 py-2 border-b-2 border-solid border-slate-800" name="message" id="" cols="30" rows="5"
-        [(ngModel)]="message.message"></textarea>
-      <div class="flex flex-col items-center pt-20">
-        <button type="submit" class="px-12 py-2 text-md text-white rounded-sm bg-[#489C5A]">Enviar</button>
+  <div class="max-w-[1110px] lg:mx-auto mb-20">
+    <div class="mx-auto mt-10 lg:w-[450px]">
+      <p class="text-xl font-bold text-center sm:text-4xl">CONTÁCTANOS</p>
+      <p class="pt-5 text-base text-center lg:leading-7">Para consultas sobre reservaciones, o preguntas, usa el
+        siguiente formulario y te contactaremos.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 bg-[rgba(241,241,241)] mt-10">
+      <div class="flex flex-col items-center flex-1 pt-5">
+        <form (submit)="createMessage()" class="flex flex-col gap-4 p-5  sm:w-[400px] w-[250px]" action="">
+          <label for="">Nombres y Apellidos</label>
+          <input
+            class="px-3 py-2 border-b border-solid border-slate-800 bg-[rgba(241,241,241)] hover:border outline-none focus:border"
+            type="text" [(ngModel)]="message.names" name="names">
+          <label for="">Email</label>
+          <input
+            class="px-3 py-2 border-b border-solid border-slate-800 bg-[rgba(241,241,241)] hover:border outline-none focus:border"
+            type="text" [(ngModel)]="message.correo" name="correo">
+          <label for="">Telefono</label>
+          <input
+            class="px-3 py-2 border-b border-solid border-slate-800 bg-[rgba(241,241,241)] hover:border outline-none focus:border"
+            type="text" [(ngModel)]="message.celular" name="celular">
+          <label for="">Mensaje</label>
+          <textarea
+            class="px-3 py-2 border-b border-solid border-slate-800 bg-[rgba(241,241,241)] hover:border outline-none focus:border"
+            name="message" id="" cols="30" rows="5" [(ngModel)]="message.message"></textarea>
+          <div class="grid pt-10 justify-items-stretch">
+            <button type="submit"
+              class="py-3 text-base text-white font-semibold bg-[#489C5A] hover:bg-[#0a0a0ad6]">Enviar</button>
+          </div>
+        </form>
       </div>
-    </form>
+
+      <div class="flex flex-col items-center">
+        <img
+          src="https://static.wixstatic.com/media/f2b033d6905c44fd99c18450a77c56dc.jpg/v1/fill/w_594,h_668,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/f2b033d6905c44fd99c18450a77c56dc.jpg"
+          alt="">
+      </div>
+    </div>
   </div>
   <app-footer></app-footer>
 </div>

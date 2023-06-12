@@ -292,4 +292,12 @@ export class ReservationComponent implements OnInit {
     pdfMake.createPdf(documentDefinition).download('factura.pdf');
   }
 
+  onInputChange(): void {
+    const maxLength = 8;
+    const inputValueAsString = this.dni.toString();
+    if (inputValueAsString.length > maxLength) {
+      this.dni = inputValueAsString.slice(0, maxLength);
+    }
+  }
+
 }

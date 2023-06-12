@@ -6,10 +6,6 @@
           <img src="/assets/logo.webp" class="w-12 rounded-md md:w-12" alt="logo">
           <p class="hidden p-bottom sm:inline">H. TORRE TORRE</p>
         </a>
-        <div class="text-right border-l py-2 sm:pl-10 pl-2 border-[#f8f8f8]">
-          <P>Call Now</P>
-          <p class="p-bottom">(855)504-8213</p>
-        </div>
       </section>
 
       <section class="max-w-[1110px] lg:mx-auto py-10 px-2 my-auto lg:px-20 xl:px-0">
@@ -59,10 +55,11 @@
             <p class="font-semibold">DNI</p>
             <input
               class="w-full h-8 px-1 py-3 sm:px-3 sm:py-5 border border-[#afafaf] hover:border-[#2a2a2a] outline-none"
-              type="text" name="dni" [(ngModel)]="dni" required="true" (change)="getUser(dni)" maxlength="8">
+              type="number" name="dni" [(ngModel)]="dni" required="true" (change)="getUser(dni)"
+              (change)="onInputChange()">
           </label>
           <label for="dni">
-            <p class="font-semibold">Nombre y apellido</p>
+            <p class="pt-5 font-semibold">Nombre y apellido</p>
             <input
               class="w-full h-8 px-1 py-3 sm:px-3 sm:py-5 border border-[#afafaf] hover:border-[#2a2a2a] outline-none"
               type="text" name="names" [(ngModel)]="reserveRoom.names" required="true" readonly>
@@ -85,9 +82,9 @@
           </div>
         </section>
 
-        <a href="/habitaciones" class="px-10 py-2 mx-auto text-white rounded main-color max-w-min">
+        <button type="submit" class="px-10 py-2 mx-auto text-white bg-[#489C5A] hover:bg-[#0a0a0ad6] max-w-min">
           RESERVAR
-        </a>
+        </button>
       </form>
     </div>
 
@@ -98,11 +95,19 @@
         <div class="border-b border-[#424242] text-xs">
           <div class="div-flex">
             <p>Ingreso:</p>
-            <p>{{reserveRoom.check_in_date?(reserveRoom.check_in_date|date):'DD-MM-YY'}}</p>
+            <p>{{reserveRoom.check_in_date | date }}</p>
           </div>
           <div class="div-flex">
             <p>Salida:</p>
-            <p>{{reserveRoom.check_out_date?(reserveRoom.check_out_date|date):'DD-MM-YY'}}</p>
+            <p>{{reserveRoom.check_out_date | date }}</p>
+          </div>
+          <div class="div-flex">
+            <p>DNI:</p>
+            <p>{{dni}}</p>
+          </div>
+          <div class="div-flex">
+            <p>Email</p>
+            <p>{{reserveRoom.email}}</p>
           </div>
           <div class="div-flex">
             <p>Tarifa media por<br> Noche:</p>
@@ -113,8 +118,6 @@
           <p>Cargos Totales:</p>
           <p>{{ room.price }}</p>
         </div>
-        <p class="text-xs text-justify">Se le cobrará: $ 121.44 (incluidos impuestos y tarifas) que no es reembolsable.
-        </p>
         <p class="text-xs text-justify">Esta tarifa no es reembolsable y no se puede cambiar ni cancelar; si elige
           cambiar o cancelar esta reserva, no se le reembolsará nada del pago.</p>
       </section>
@@ -123,7 +126,7 @@
         <p class="text-center">¿Necesitas ayuda?</p>
         <div class="flex items-center justify-center gap-5">
           <img src="/assets/logo-telefono-movil.webp" class="w-10" alt="tel icon">
-          <p class="p-bottom">(855) 506-8364</p>
+          <p class="p-bottom">+51 998 602 811</p>
         </div>
       </section>
 

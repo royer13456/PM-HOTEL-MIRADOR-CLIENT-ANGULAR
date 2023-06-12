@@ -49,4 +49,10 @@ export class RoomspageComponent implements OnInit {
         );
       });
   }
+
+  scrollToSection(sectionId: string): void {
+    const element = document.querySelector('#' + sectionId);
+    element!.scrollIntoView({ behavior: 'smooth' });
+    console.log("scroll bonito");
+  }
 }

@@ -1,43 +1,61 @@
 <div class="flex flex-col min-h-screen ">
-  <div class="bg-[url('/assets/about-hero.webp')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
-    <div class="bg-[rgba(35,35,35,0.74)] h-[400px] md:h-[450px]">
+  <div id="main"
+    class="bg-[url('https://static.wixstatic.com/media/51939cee9c2a44d09f68f8567a3a5945.jpg/v1/fill/w_1347,h_560,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/51939cee9c2a44d09f68f8567a3a5945.jpg')] bg-cover bg-center bg-local h-[300px] md:h-[350px]">
+    <div class="bg-[rgba(35,35,35,0.74)] h-[300px] md:h-[350px]">
       <app-navbar></app-navbar>
-      <div class="flex flex-col items-center mt-10">
-        <h1 class="font-bold text-2xl sm:text-3xl text-center text-[rgb(239,239,239)] ">HABITACIONES</h1>
-      </div>
     </div>
   </div>
-  <div class="container flex flex-col gap-20 mx-auto my-10">
+  <div class="max-w-[1110px] lg:mx-auto container flex flex-col mx-auto my-10">
 
-    <section class="flex flex-col">
-      <h1 class="underline">Habitaciones estándar</h1>
-      <div class="grid gap-4 md:grid-cols-3" *ngIf="estandarRooms.length>0; else emptyRooms">
-        <app-roomcard *ngFor="let room of estandarRooms" [room]="room"></app-roomcard>
-      </div>
-      <ng-template #emptyRooms>
-        <app-cardskeleton></app-cardskeleton>
-      </ng-template>
-    </section>
+    <div class="flex flex-col items-center">
+      <p class="text-2xl font-bold text-center sm:text-3xl">HABITACIONES</p>
+    </div>
 
-    <section class="flex flex-col">
-      <h1 class="underline">Habitaciones doble</h1>
-      <div class="grid gap-4 md:grid-cols-3" *ngIf="estandarRooms.length>0; else emptyRooms">
-        <app-roomcard [room]="room" *ngFor="let room of dobleRooms"></app-roomcard>
-      </div>
-      <ng-template #emptyRooms>
-        <app-cardskeleton></app-cardskeleton>
-      </ng-template>
-    </section>
+    <nav class="flex flex-col items-center justify-center gap-10 mt-4 md:flex-row">
+      <a class="min-w-[260px] hover:bg-[#474646] cursor-pointer hover:text-slate-50 border-2 border-black py-5 px-12 text-md lg:text-base rounded-lg"
+        (click)="scrollToSection('habitacion_estandar')">HABITACIONES ESTÁNDAR</a>
+      <a class="min-w-[260px] hover:bg-[#474646] cursor-pointer hover:text-slate-50 border-2 border-black py-5 px-12 text-md lg:text-base rounded-lg"
+        (click)="scrollToSection('habitacion_doble')">HABITACIONES DOBLE</a>
+      <a class="min-w-[260px] hover:bg-[#474646] cursor-pointer hover:text-slate-50 border-2 border-black py-5 px-12 text-md lg:text-base rounded-lg"
+        (click)="scrollToSection('habitacion_triple')">HABITACIONES TRIPLE</a>
+    </nav>
 
-    <section class="flex flex-col">
-      <h1 class="underline">Habitaciones triple</h1>
-      <div class="grid gap-4 md:grid-cols-3" *ngIf="estandarRooms.length>0; else emptyRooms">
-        <app-roomcard [room]="room" *ngFor="let room of tripleRooms"></app-roomcard>
-      </div>
-      <ng-template #emptyRooms>
-        <app-cardskeleton></app-cardskeleton>
-      </ng-template>
-    </section>
+    <div class="flex flex-col gap-20 mt-24">
+      <section id="habitacion_estandar" class="flex flex-col">
+        <h1 class="pb-5 underline">Habitaciones estándar</h1>
+        <div class="" *ngIf="estandarRooms.length>0; else emptyRooms">
+          <!-- grid gap-4 md:grid-cols-3 -->
+          <app-roomcard *ngFor="let room of estandarRooms" [room]="room"></app-roomcard>
+        </div>
+        <ng-template #emptyRooms>
+          <app-cardskeleton></app-cardskeleton>
+        </ng-template>
+      </section>
+
+      <section class="flex flex-col" id="habitacion_doble">
+        <h1 class="pb-5 underline">Habitaciones doble</h1>
+        <div class="" *ngIf="estandarRooms.length>0; else emptyRooms">
+          <app-roomcard [room]="room" *ngFor="let room of dobleRooms"></app-roomcard>
+        </div>
+        <ng-template #emptyRooms>
+          <app-cardskeleton></app-cardskeleton>
+        </ng-template>
+      </section>
+
+      <section class="flex flex-col" id="habitacion_triple">
+        <h1 class="pb-5 underline">Habitaciones triple</h1>
+        <div class="" *ngIf="estandarRooms.length>0; else emptyRooms">
+          <app-roomcard [room]="room" *ngFor="let room of tripleRooms"></app-roomcard>
+        </div>
+        <ng-template #emptyRooms>
+          <app-cardskeleton></app-cardskeleton>
+        </ng-template>
+      </section>
+    </div>
+
+    <div class="go-to-main" (click)="scrollToSection('main')">
+      ⬆️
+    </div>
 
   </div>
   <app-footer></app-footer>

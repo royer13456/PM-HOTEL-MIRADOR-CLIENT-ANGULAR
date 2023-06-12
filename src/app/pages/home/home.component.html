@@ -1,5 +1,6 @@
 <div class='min-h-screen'>
-  <div class="bg-[url('/assets/homepage-main2.webp')] bg-cover bg-center bg-local h-[400px] md:h-[450px]">
+  <div
+    class="bg-[url('https://scontent.fjau1-1.fna.fbcdn.net/v/t31.18172-8/1974039_817035015029848_3112701234871310706_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGGoHeeX7myh3PqJfp7-Ia7rAe8f06OJOOsB7x_To4k43sq5l_TIKsE-98287qNhMRFN0bYDMLpxjwRzlSA7y-q&_nc_ohc=1EZOwafxlGkAX90dJjn&_nc_ht=scontent.fjau1-1.fna&oh=00_AfD1SqNvzrxQuJg52ICSmrJthaYbqa0NTtk3armJTPvQGA&oe=64ADF427')] bg-cover bg-bottom bg-fixed ">
     <div class="bg-[rgba(35,35,35,0.74)] h-[400px] md:h-[450px]">
       <app-navbar></app-navbar>
       <div class="flex flex-col items-center mt-10">
@@ -11,30 +12,44 @@
 
   <div class="max-w-[1110px] lg:mx-auto ">
 
-    <div class="grid justify-between gap-10 px-10 mt-20 mb-20 md:grid-cols-2 md:gap-20 ">
+    <div class="grid justify-between gap-10 px-10 mt-20 mb-20 md:px-0 md:grid-cols-2 md:gap-20 ">
       <div class="text-justify ">
-        <p class="text-2xl font-bold text-center md:text-3xl lg:text-4xl">¿QUE NOS DISTINGUE?</p><br>
-        <p class="text-xl">Las personas son lo primero: El talento humano es sumamente importante para el desarrollo de
+        <p class="text-2xl font-bold text-center md:text-3xl lg:text-3xl">¿QUE NOS DISTINGUE?</p><br>
+        <p class="text-lg">Las personas son lo primero: El talento humano es sumamente importante para el desarrollo de
           nuestra misión. Un empleado contento generará un huésped contento, por eso uno de nuestros principales valores
           son las personas empezando por nuestros empleados.</p>
-        <p class="text-xl">El compromiso de nuestro local es siempre brindar confianza y seguridad a nuestro clientes. Y
+        <p class="text-lg">El compromiso de nuestro local es siempre brindar confianza y seguridad a nuestro clientes. Y
           hacer de su estancia la mejor posible, brindanloes cuartos comodos y seguros.</p>
+        <div class="flex justify-center mt-7">
+          <a href="/about" class="border-green-500 border hover:border-[#0a0a0ad6] px-5 py-2">Leer más</a>
+        </div>
       </div>
       <div class="flex items-center ">
-        <img src="/assets/hotel-portada.webp" alt="portada" width="475" height="356">
+        <img loading="lazy"
+          src="https://scontent.fjau1-1.fna.fbcdn.net/v/t1.6435-9/55619209_2523657661034233_8911915353739624448_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeFjVr7Zq1Fd73Whhryo9U1Ag2TqWU_SmwSDZOpZT9KbBHNT4LSPEu-OIizoP8RavY693_QJFT963iHK-1-xZOZB&_nc_ohc=R6ymUbUF0dgAX-_GQt5&_nc_ht=scontent.fjau1-1.fna&oh=00_AfAX97iipDMfNWqr-HQYwfHg_Q_SK8iWQ9SAMiTetFGmJA&oe=64ADFC5C"
+          alt="portada" width="475" height="356">
       </div>
     </div>
 
   </div>
 
-  <div class="bg-[#4b9b5c17] pt-20 pb-40 ">
+  <div
+    class="bg-[url('https://lh3.googleusercontent.com/p/AF1QipPJoRWEpG4KOdGxDzp1x4ckW_Qb1ds0xtpdRNCn=s680-w680-h510')] bg-fixed bg-cover bg-top bg-no-repeat">
+    <div class="flex flex-col items-center gap-3 py-5 px-5 bg-[#232323bd]">
+      <p class="text-2xl font-semibold text-center text-myWhite lg:text-3xl xl:text-4xl">HOTEL TORRE TORRE
+      </p>
+      <p class="text-center text-myWhite">Jr.Torre torre 202 - Huancayo</p>
+    </div>
+  </div>
+
+  <div class="max-w-[1110px] lg:mx-auto pt-20 pb-40 ">
     <div>
       <div class="flex flex-col items-center gap-10 px-10">
         <p class="text-2xl font-semibold text-center lg:text-3xl">BENEFICIOS ADICIONALES</p>
         <h3 class="text-center sm:text-xl">PARA HACER SU EXPERIENCIA AUN MAS COMPLETA OFRECEMOS LOS SIGUIENTES SERVICIOS
         </h3>
 
-        <div class="grid items-center justify-center gap-20 pt-20 text-lg lg:grid-cols-3 xl:gap-40">
+        <div class="grid items-center justify-center gap-20 pt-20 text-lg lg:grid-cols-3 xl:gap-20">
           <div class="flex flex-col gap-5">
             <div class="flex flex-row items-center justify-end gap-5">
               <p>Seguridad 24H</p>
@@ -56,7 +71,7 @@
           </div>
 
           <div class="flex items-center justify-center">
-            <img class="rounded-[50%] w-52 h-52 sm:h-80 sm:w-80" src="/assets/atencion-cliente-hotel.webp"
+            <img class="rounded-[50%] sm:h-64 sm:w-64 w-52 h-52" src="/assets/atencion-cliente-hotel.webp"
               alt="atencion al cliente" width="320" height="320">
           </div>
 
@@ -83,40 +98,29 @@
     </div>
   </div>
 
-  <div class="bg-[url('/assets/baner.webp')] bg-cover bg-center bg-local">
-    <div class="flex flex-col items-center gap-3 py-5 px-5 bg-[#232323bd]">
-      <p class="text-2xl font-semibold text-center text-myWhite lg:text-3xl xl:text-4xl">HOTEL TORRE TORRE
+  <div
+    class="grid justify-center items-center min-h-screen max-w-[1110px] lg:mx-auto m-auto bg-[url('https://static.wixstatic.com/media/84770f_98aabcec66e34956acf748305c555ec3~mv2_d_2500_1658_s_2.jpg/v1/fill/w_980,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_98aabcec66e34956acf748305c555ec3~mv2_d_2500_1658_s_2.jpg')] bg-fixed bg-cover bg-center bg-no-repeat">
+    <div class="bg-slate-50 px-14 py-14 w-96">
+      <p class="text-2xl font-semibold text-center">HABITACIONES</p>
+      <p class="text-justify p-bottom">Nuestras habitaciones ofrecen todas las comodidades e instalaciones para una
+        estancia
+        agradable y sin preocupaciones. Ofrecemos un entorno acogedor minuciosamente pensado para brindarle el mayor
+        confort posible. Todas nuestras habitaciones están equipadas con aire acondicionado, televisión LCD y una bebida
+        con costo adicional.
       </p>
-      <p class="text-center text-myWhite">Jr.Torre torre 202 - Huancayo</p>
+      <div class="pt-5 text-center text-green-500">
+        <a href="/habitaciones" class="border-b border-green-500">Ver habitaciones</a>
+      </div>
     </div>
   </div>
 
+
   <div class="max-w-[1110px] lg:mx-auto ">
-    <div class="flex flex-col items-center gap-32 mt-32 mb-20">
-      <div class="flex flex-col items-center gap-10 px-5 sm:px-10 md:px-20">
-        <p class="text-2xl font-medium text-[#489C5A] lg:text-3xl">HABITACIONES</p>
-        <p class="text-center xl:text-xl">Nuestras habitaciones ofrecen todas las comodidades e instalaciones para una
-          estancia
-          agradable y sin preocupaciones. Ofrecemos un entorno acogedor minuciosamente pensado para brindarle el mayor
-          confort posible. Desde nuestras habitaciones podrá disfrutar de una privilegiada vista de todo el distrito de
-          San Miguel y el puerto del Callao. Todas nuestras habitaciones están equipadas con aire acondicionado, minibar
-          y
-          televisión LCD y minibar con costo adicional.</p>
-      </div>
-      <!-- <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center gap-2 mb-20 text-xl text-[#489C5A]">
-          <a href="">VER HABITACIONES</a>
-          <hr class="w-24 border-solid border-b-2 border-[#489C5A]">
-        </div>
-        <div>
-          habitaciones
-        </div>
-      </div> -->
-    </div>
 
     <div class="flex flex-col gap-20 pt-20 pb-32 ">
       <h1 class="px-5 text-4xl text-center">NUESTRO HOTEL CERCA DE TÍ</h1>
-      <div class="flex flex-row flex-wrap items-center justify-center gap-20 px-10 lg:justify-between lg:gap-10 ">
+      <div
+        class="flex flex-row flex-wrap items-center justify-center gap-20 px-10 md:px-0 lg:justify-between lg:gap-10 ">
         <div class="w-full">
           <iframe title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.7275224754753!2d-75.19675368459319!3d-12.062259245474513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e97b6632b0cfd%3A0xf889e413488c25a0!2sHotel%20El%20Mirador%20%22Torre%20Torre%22!5e0!3m2!1ses-419!2spe!4v1679785921819!5m2!1ses-419!2spe"
@@ -139,7 +143,8 @@
           </div>
         </div>
         <div class="flex flex-col items-center w-full mt-10 text-center">
-          <a class="bg-[#489C5A] rounded text-[rgb(234,234,234)] px-10 py-3" href="#">RESERVAR</a>
+          <a class="bg-[#489C5A] hover:bg-[#0a0a0ad6] text-[rgb(234,234,234)] px-10 py-3"
+            href="/habitaciones">RESERVAR</a>
         </div>
       </div>
 

@@ -8,8 +8,8 @@ import { Subject } from 'rxjs';
 })
 export class RoomService {
 
-  // private API_URL = "http://localhost:3000/api/room"
-  API_URL = 'https://pm-hotel-mirador-server-production.up.railway.app/api/room'
+  private API_URL = "http://localhost:3000/api/room"
+  // API_URL = 'https://pm-hotel-mirador-server-production.up.railway.app/api/room'
 
   constructor(private http: HttpClient) { }
 
